@@ -12,6 +12,7 @@ import { TicketsComponent } from './pages/tickets/tickets.component';
 import { RidesComponent } from './pages/rides/rides.component';
 import { CompanyComponent } from './pages/company/company.component';
 import { LoginModalComponent } from './elements/modal/login-modal/login-modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LoginModalComponent } from './elements/modal/login-modal/login-modal.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   entryComponents: [
