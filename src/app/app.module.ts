@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { MatCardModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatCardModule, MatFormFieldModule, MatInputModule, MatDialogModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,7 +37,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   entryComponents: [

@@ -1,3 +1,7 @@
+#login-modal-card {
+
+}
+
 .modal-image {
     height: auto;
     display: block;
@@ -18,6 +22,7 @@
 }
 
 .close-button {
+    transition: 1s;
     margin-right: 2%;
 }
 

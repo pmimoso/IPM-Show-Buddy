@@ -8,9 +8,13 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoginModalComponent implements OnInit {
 
-  constructor(public activeModal: NgbActiveModal) {  }
+  constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
+  }
+
+  closeModal() {
+    this.activeModal.close();
   }
 
 }
