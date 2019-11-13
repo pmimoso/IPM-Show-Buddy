@@ -1,0 +1,35 @@
+<div id="login-modal-card" class="modal-body">
+    <img ngbAutofocus class="modal-image" src="../../../../assets/logo_small.png">
+    <div mat-card-avatar class="login-icon"></div>
+
+    <div class="form-group">
+        <mat-form-field class="login-field">
+            <mat-hint>Escolha um nome de utilizador</mat-hint>
+            <input matInput placeholder="Username">
+        </mat-form-field>
+        <mat-form-field class="login-field" value="">
+            <mat-hint>Escolha a sua palavra-passe</mat-hint>
+            <input #password matInput type="password" placeholder="Password">
+        </mat-form-field>
+        <mat-form-field class="login-field" value="">
+                <mat-hint>Confirme a palavra-passe escolhida</mat-hint>
+                <input #confirm matInput type="password" placeholder="Password Confirmation">
+            </mat-form-field>
+        <mat-form-field class="login-field" value="">
+            <mat-hint>Insira a sua data de nascimento</mat-hint>
+            <input matInput [matDatepicker]="picker" placeholder="Birthday">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="login-field">
+                <mat-hint>Escolha alguns dos seus interesses</mat-hint>
+                <mat-select [formControl]="taste" multiple>
+                  <mat-option *ngFor="let taste of tasteList" [value]="taste">{{taste}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+    </div>
+    <div class="login-button-wrapper">
+        <button mat-raised-button type="button" class="close-button" (click)="closeModal()">Fechar</button>
+        <button mat-raised-button type="button" class="login-button" (click)="closeModal()">Registar</button>
+    </div>
+</div>
