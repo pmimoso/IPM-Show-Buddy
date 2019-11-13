@@ -1,0 +1,27 @@
+.header-text {
+    font-family: 'Bree Serif';
+}
+
+.header {
+    background-image: linear-gradient(rgb(176, 226, 255), white);
+    background-size: 100%;
+}
+
+#header-description {
+   margin-top: 8%;
+}
+
+.header-logo {
+    margin: 24%;
+    transform: scale(1.6);
+}
+
+.buddy-text {
+    font-family: 'Bree Serif';
+    margin-top: 25%;
+    color: rgb(88, 177, 230);
+}
+
+.connection-image {
+    transform: translateX(-16%) scale(0.5);
+}
