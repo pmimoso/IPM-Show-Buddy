@@ -18,6 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { RegisterModalComponent } from './elements/modal/register-modal/register-modal.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ConfirmationModalComponent } from './elements/modal/confirmation-modal/confirmation-modal.component';
+import { PasswordErrorModalComponent } from './elements/modal/password-error-modal/password-error-modal.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     CompanyComponent,
     LoginModalComponent,
     RegisterModalComponent,
+    ConfirmationModalComponent,
+    PasswordErrorModalComponent,
     
   ],
   imports: [
@@ -53,7 +57,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   providers: [MatDatepickerModule],
   entryComponents: [
     LoginModalComponent,
-    RegisterModalComponent
+    RegisterModalComponent,
+    ConfirmationModalComponent,
+    PasswordErrorModalComponent
   ],
   bootstrap: [AppComponent]
 })
