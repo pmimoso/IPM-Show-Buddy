@@ -2,3 +2,16 @@
     margin-left: 10px;
     background-color: rgb(88, 177, 230);
 }
+
+.navbar-toggler {
+    transition: 0.7s;
+}
+
+.navbar-toggler:hover {
+    color: white;
+    border: 1px solid white;
+}
+
+.navbar-brand {
+        font-family: 'Bree Serif';
+}

@@ -10,6 +10,8 @@ import { RegisterModalComponent } from '../modal/register-modal/register-modal.c
 })
 export class NavbarComponent implements OnInit {
 
+  isCollapsed: boolean = true;
+
   constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
@@ -21,5 +23,9 @@ export class NavbarComponent implements OnInit {
 
   openRegisterModal(): void {
     this.modalService.open(RegisterModalComponent);
+  }
+
+  toggleCollapsed(): void {
+    this.isCollapsed = !this.isCollapsed;
   }
 }
