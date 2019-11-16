@@ -20,6 +20,7 @@ import { RegisterModalComponent } from './elements/modal/register-modal/register
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ConfirmationModalComponent } from './elements/modal/confirmation-modal/confirmation-modal.component';
 import { PasswordErrorModalComponent } from './elements/modal/password-error-modal/password-error-modal.component';
+import { RequiredErrorModalComponent } from './elements/modal/required-error-modal/required-error-modal.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { PasswordErrorModalComponent } from './elements/modal/password-error-mod
     RegisterModalComponent,
     ConfirmationModalComponent,
     PasswordErrorModalComponent,
+    RequiredErrorModalComponent,
     
   ],
   imports: [
@@ -59,7 +61,8 @@ import { PasswordErrorModalComponent } from './elements/modal/password-error-mod
     LoginModalComponent,
     RegisterModalComponent,
     ConfirmationModalComponent,
-    PasswordErrorModalComponent
+    PasswordErrorModalComponent,
+    RequiredErrorModalComponent
   ],
   bootstrap: [AppComponent]
 })
