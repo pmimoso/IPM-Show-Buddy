@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginModalComponent } from '../modal/login-modal/login-modal.component';
 import { RegisterModalComponent } from '../modal/register-modal/register-modal.component';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { LoggedUserService } from 'src/app/services/logged-user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -12,9 +15,17 @@ export class NavbarComponent implements OnInit {
 
   isCollapsed: boolean = true;
 
-  constructor(private modalService: NgbModal) { }
+  loggedUser: User;
+
+  constructor(private modalService: NgbModal, private loggedUserService: LoggedUserService,
+    private router: Router) {
+    loggedUserService.itemValue.subscribe(loggedUser => {
+      this.loggedUser = JSON.parse(loggedUser);
+     });
+  }
 
   ngOnInit() {
+
   }
 
   openLoginModal(): void {
@@ -27,5 +38,11 @@ export class NavbarComponent implements OnInit {
 
   toggleCollapsed(): void {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  logout() {
+    this.loggedUser = null;
+    this.loggedUserService.logoutUser(JSON.stringify(this.loggedUser));
+    this.router.navigate(['/home']).finally();
   }
 }

@@ -5,16 +5,16 @@
       <div class="form-group">
     <mat-form-field class="login-field">
         <mat-hint>Insira o seu nome de utilizador</mat-hint>
-      <input matInput placeholder="Username">
+      <input matInput placeholder="Username" [(ngModel)]='username'>
     </mat-form-field>
     <mat-form-field class="login-field" value="">
         <mat-hint>Insira a sua palavra-passe</mat-hint>
-      <input matInput type="password" placeholder="Password">
+      <input matInput type="password" placeholder="Password" [(ngModel)]='password'>
     </mat-form-field>
   </div>
     <div class="login-button-wrapper">
     <button mat-raised-button type="button" class="close-button" (click)="closeModal()">Fechar</button>
-    <button mat-raised-button type="button" class="login-button" (click)="closeModal()">Login</button>
+    <button mat-raised-button type="button" class="login-button" (click)="login(username, password)">Login</button>
     </div>
   </div>
     

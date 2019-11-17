@@ -1,13 +1,33 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  userList: User[] = [];
+  admin: User = {
+    username: "admin",
+    password: "admin",
+    birthday: null,
+    tastes: null
+  }
+
+  userList: User[] = [this.admin];
 
   constructor() {
+  }
+
+  authenticate(username: string, password: string): boolean {
+    const result: User[] = this.userList.filter(u => u.username == username && u.password == password);
+    if (result.length > 0) {
+      return true;
+    }
+    return false;
+  }
+
+  register(user: User): void {
+    this.userList.push(user);
+    //localStorage.setItem('registeredUsers', JSON.stringify(this.userList));
   }
 
   passwordConfirmed(password: string, passwordConfirmation: string): boolean {
@@ -18,20 +38,9 @@ export class AuthenticationService {
   }
 
 
-  authenticate(user: User): boolean {
-    const result: User[] = this.userList.filter(u => u.username == user.username && u.password == user.password);
-    if (result.length > 0) {
-      return true;
-    }
-    return false;
+  getUser(username: string): User {
+    const user: User = this.userList.find(user => user.username == username);
+    return user;
   }
-
-  register(user: User): void {
-    this.userList.push(user);
-    //localStorage.setItem('registeredUsers', JSON.stringify(this.userList));
-    //console.log(this.userList);
-  }
-
-
 
 }

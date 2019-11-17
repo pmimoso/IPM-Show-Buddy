@@ -5,6 +5,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-modal.component';
 import { PasswordErrorModalComponent } from '../password-error-modal/password-error-modal.component';
 import { RequiredErrorModalComponent } from '../required-error-modal/required-error-modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-modal',
@@ -65,7 +66,6 @@ export class RegisterModalComponent implements OnInit {
 
       this.closeModal();
       this.openConfirmModal();
-
     }
 
     else {
