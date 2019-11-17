@@ -1,0 +1,72 @@
+// #dashboard-row {
+//     margin-top: 10%;
+// }
+
+.dashboard-text {
+    font-family: 'Bree Serif';
+    color: rgb(73, 81, 163);
+    margin-top: 40%;
+}
+
+.main-content {
+    //margin-left: 1%;
+    background-image: linear-gradient(rgb(144, 149, 211), white);
+    background-size: 100%;
+}
+
+.dashboard-item {
+   // margin-right: 8%;
+    text-align: center;
+}
+
+.container-margin {
+    margin-left: 8%;
+}
+
+@media screen and (min-width: 1920px) {
+    .container-margin {
+        margin-left: 21%;
+    }
+  }
+
+.vertical-divider {
+    border-left: 1px solid rgba(42, 51, 124, 0.2);
+    height: 455px;
+    margin-top: 5%;
+  }
+
+.btn-style {
+    margin-top: 24%;
+    background-color: rgb(144, 149, 211);
+    border: rgb(24, 31, 102);
+    font-family: 'Bree Serif';
+    transition: 1s;
+}
+
+
+.btn-style:hover {
+    background-color: rgb(24, 31, 102);
+}
+
+.bottom-btn-style:hover {
+    background-color: rgb(24, 31, 102);
+}
+
+.bottom-btn-style {
+    margin-top: 10%;
+    background-color: rgb(144, 149, 211);
+    border: rgb(24, 31, 102);
+    font-family: 'Bree Serif';
+    transition: 1s;
+}
+
+.login-field {
+    display: flex;
+    display: block;
+    margin: auto;
+}
+
+.form-group {
+    margin-top: 9%;;
+}
+

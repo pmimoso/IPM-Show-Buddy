@@ -1,3 +1,56 @@
-<div class="dashboard-options">
-       <p>FAZER MODAL DO LOGIN E DEPOIS A DASHBOARD</p>
+
+<div class="main-content">
+       
+       <section class="container container-margin">
+              <div id="dashboard-row" class="row">
+                     <div class="col-sm dashboard-item">
+                            <h3><div class="dashboard-text">EVENTOS</div></h3>
+                            <div class="form-group">
+                                          <mat-form-field class="login-field">
+                                              <mat-hint>Nome</mat-hint>
+                                              <input matInput [(ngModel)]='name' placeholder="Nome do evento">
+                                          </mat-form-field>
+                                          <mat-form-field class="login-field" value="">
+                                              <mat-hint>Localização</mat-hint>
+                                              <input  matInput [(ngModel)]='location' placeholder="Localização do evento">
+                                          </mat-form-field>
+                                          <mat-form-field class="login-field">
+                                                        <mat-hint>Tipo de evento</mat-hint>
+                                                        <mat-select  [formControl]="type" [(ngModel)]='types'>
+                                                          <mat-option #types *ngFor="let type of typeList" [value]="type">{{type}}</mat-option>
+                                                        </mat-select>
+                                                      </mat-form-field>
+                                          <mat-form-field class="login-field" value="">
+                                              <mat-hint>Insira a data de início do evento</mat-hint>
+                                              <input matInput [matDatepicker]="picker" [(ngModel)]='startDate' placeholder="Data de início">
+                                              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                              <mat-datepicker #picker></mat-datepicker>
+                                          </mat-form-field>
+                                      </div>
+                                      <button type="button" class="btn btn-primary btn-lg btn-block bottom-btn-style">Pesquisar</button>
+                     </div>
+                     <div class="vertical-divider"></div>
+                     <div class="col-sm dashboard-item">
+                            <h3><div class="dashboard-text">COMPANHIA</div></h3>
+                            <button type="button" class="btn btn-primary btn-lg btn-block btn-style" (click)="openRequestModal()">Pedir companhia</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block bottom-btn-style">Listar pedidos</button>
+
+                     </div>
+                     <div class="vertical-divider"></div>
+                     <div class="col-sm dashboard-item">
+                            <h3><div class="dashboard-text">BOLEIA</div></h3>
+                            <button type="button" class="btn btn-primary btn-lg btn-block btn-style">Pedir boleia</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block bottom-btn-style">Listar boleias</button>
+
+                     </div>
+                     <div class="vertical-divider"></div>
+                     <div class="col-sm dashboard-item">
+                            <h3><div class="dashboard-text">BILHETES</div></h3>
+                            <button type="button" class="btn btn-primary btn-lg btn-block btn-style">Vender bilhete</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block bottom-btn-style">Comprar bilhete</button>
+                     </div>
+
+              </div>
+       </section>
+
 </div>

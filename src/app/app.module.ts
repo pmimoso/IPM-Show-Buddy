@@ -21,6 +21,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ConfirmationModalComponent } from './elements/modal/confirmation-modal/confirmation-modal.component';
 import { PasswordErrorModalComponent } from './elements/modal/password-error-modal/password-error-modal.component';
 import { RequiredErrorModalComponent } from './elements/modal/required-error-modal/required-error-modal.component';
+import { CompanyRequestModalComponent } from './elements/modal/company-request-modal/company-request-modal.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { RequiredErrorModalComponent } from './elements/modal/required-error-mod
     ConfirmationModalComponent,
     PasswordErrorModalComponent,
     RequiredErrorModalComponent,
+    CompanyRequestModalComponent,
     
   ],
   imports: [
@@ -54,7 +56,7 @@ import { RequiredErrorModalComponent } from './elements/modal/required-error-mod
     MatNativeDateModule,
     MatSelectModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
   ],
   providers: [MatDatepickerModule],
   entryComponents: [
@@ -62,7 +64,8 @@ import { RequiredErrorModalComponent } from './elements/modal/required-error-mod
     RegisterModalComponent,
     ConfirmationModalComponent,
     PasswordErrorModalComponent,
-    RequiredErrorModalComponent
+    RequiredErrorModalComponent,
+    CompanyRequestModalComponent
   ],
   bootstrap: [AppComponent]
 })
