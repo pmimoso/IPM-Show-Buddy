@@ -1,7 +1,32 @@
-<div id="login-modal-card" class="modal-body">
+<div class="modal-body">
     <img ngbAutofocus class="modal-image" src="../../../../assets/connection.png">
     <div class="confirmation-message">
         Aqui podes realizar um pedido da companhia. Insere um evento e algumas
         características acerca da pessoa com queres ir.
     </div>
-   
+
+    <div class="form-group">
+        <mat-form-field class="company-request-field">
+            <mat-hint>Escolha o nome do evento a que deseja ir.</mat-hint>
+            <input matInput [(ngModel)]='eventName' placeholder="Nome do evento">
+        </mat-form-field>
+        <mat-form-field class="company-request-field">
+            <mat-hint>Defina a idade mínima da companhia que procura.</mat-hint>
+            <input matInput type="number" [(ngModel)]='minAge' placeholder="Idade mínima">
+        </mat-form-field>
+        <mat-form-field class="company-request-field">
+            <mat-hint>Defina a idade máxima da companhia que procura.</mat-hint>
+            <input matInput type="number" [(ngModel)]='maxAge' placeholder="Idade máxima">
+        </mat-form-field>
+
+        <mat-form-field class="company-request-field">
+            <mat-hint>Escolha o sexo da pessoa que procura</mat-hint>
+            <mat-select [formControl]="sex" [(ngModel)]='sexV' multiple>
+                <mat-option #sexv *ngFor="let sex of sexList" [value]="sex">{{sex}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="company-button-wrapper">
+            <button mat-raised-button type="button" class="company-request-btn" (click)="makeCompanyRequest(eventName, minAge, maxAge, sexV)">Publicar</button>
+        </div>

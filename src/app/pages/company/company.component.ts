@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestsService } from 'src/app/services/requests.service';
 
 @Component({
   selector: 'app-company',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanyComponent implements OnInit {
 
-  constructor() { }
+  companyRequests: CompanyRequest[] = [];
+
+  constructor(private requestService: RequestsService) { 
+    this.companyRequests = this.requestService.getCompanyRequestList();
+  }
 
   ngOnInit() {
   }

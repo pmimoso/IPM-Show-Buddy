@@ -1,1 +1,11 @@
-<p>company works!</p>
+<mat-list>
+<mat-list-item>
+        <div class="card-wrapper" fxLayout="column">
+    <mat-card *ngFor="let request of companyRequests" class="request-card">
+        <p>{{request.requestOwner.username}}</p>
+        <p>{{request.eventName}}</p>
+        <p>{{request.requestOwner.tastes}}</p>
+    </mat-card>
+        </div>
+</mat-list-item>
+</mat-list>

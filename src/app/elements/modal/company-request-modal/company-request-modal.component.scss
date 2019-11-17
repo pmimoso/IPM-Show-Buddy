@@ -1,7 +1,7 @@
 .confirmation-message {
-    margin-top: 4%;
     display: flex;
     justify-content: center;
+    margin-top: 3%;
 }
 
 .modal-image {
@@ -11,32 +11,30 @@
     width: 20%;
 }
 
-.confirmation-button-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
-}
-
-.close-button {
-    transition: 1s;
-    margin-right: 2%;
-}
-
-.close-button:hover {
-    background-color:rgb(88, 177, 230);
-    margin-right: 2%;
-}
-
-.login-field {
-    display: flex;
-    display: block;
-    margin: auto;
-}
-
-.select-wrapper {
-    display: flex;
-}
-
 ::ng-deep .cdk-overlay-container {
     z-index: 1200 !important;
+  }
+
+  .form-group {
+    margin-top: 5%;
+  }
+
+  .company-request-field {
+    display: inline;
+  }
+
+  .company-button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .company-request-btn {
+    color: white;
+    background-color: #9095d3;
+    transition: 1s;
+  }
+
+  .company-request-btn:hover {
+    color: white;
+    background-color: rgb(73, 81, 163);
   }
