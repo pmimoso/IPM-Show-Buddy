@@ -54,12 +54,19 @@ export class RegisterModalComponent implements OnInit {
 
     const passwordConfirmed: boolean = this.authenticationService.passwordConfirmed(password, confirmationPassword);
 
+    let day = birthday.getDay();
+    let month = birthday.getMonth();
+    let year = birthday.getFullYear();
+    let stringDate = year + "/" + month + "/" + day;
+    const finalDate: Date = new Date(stringDate);
+    console.log(finalDate);
+
     if (passwordConfirmed) {
 
       const newUser: User = {
         username: username,
         password: password,
-        birthday: birthday,
+        birthday: finalDate,
         tastes: tastes
       }
       this.authenticationService.register(newUser);

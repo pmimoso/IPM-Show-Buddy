@@ -27,6 +27,7 @@ export class CompanyRequestModalComponent implements OnInit {
 
   makeCompanyRequest(eventName: string, minAge: number, maxAge: number, sex: string[]) {
     const currentUser: User = JSON.parse(this.loggedUserService.getCurrentUser());
+    console.log(currentUser);
     const request: CompanyRequest = {
       requestOwner: currentUser,
       eventName: eventName,

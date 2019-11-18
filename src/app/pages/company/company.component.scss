@@ -1,10 +1,38 @@
 .card-wrapper {
     display: block;
     margin: auto;
+    margin-left: 10%;
     width: 55%;
+
+  }
+
+  .list-wrapper {
+    height: 100%;
+    background-image: linear-gradient(rgb(144, 149, 211), white);
+    background-size: 100%;
   }
 
   .request-card {
-      background-color: rgb(144, 149, 211);
+    display:flex;
+    border-color: rgb(42, 51, 124);
+   // border: 2px solid rgb(42, 51, 124);
+    background-color: rgb(255, 255, 255);
     margin-top: 8%;
   }
+
+  .vertical-divider {
+    height: auto;
+    border-left: 1px solid rgba(42, 51, 124, 0.5);
+    margin-left: 5%;
+  }
+
+  #invite-btn {
+    border-color: rgb(29, 158, 4);
+    background-color: rgb(29, 158, 4);
+    margin-left: 6%;
+  }
+
+  .description-text {
+    margin-top: 2%;
+  }
+

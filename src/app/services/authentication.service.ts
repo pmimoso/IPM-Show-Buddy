@@ -8,7 +8,7 @@ export class AuthenticationService {
   admin: User = {
     username: "admin",
     password: "admin",
-    birthday: null,
+    birthday: new Date("1990/10/02"),
     tastes: null
   }
 

@@ -10,8 +10,8 @@ export class RequestsService {
     requestOwner: {
     username: "Sandro",
     password: "Sandro",
-    birthday: null,
-    tastes: ['Rock', 'Rap',]
+    birthday: new Date("1998/01/12"),
+    tastes: ['Rock', ' Rap',]
     },
     eventName: "Festival da Sardinha",
     minAge: 25,
@@ -22,13 +22,13 @@ export class RequestsService {
     requestOwner: {
     username: "Júlia",
     password: "Júlia",
-    birthday: null,
-    tastes: ['Ópera', 'Museus', 'Teatros']
+    birthday: new Date("1998/10/19"),
+    tastes: ['Ópera', ' Museus', ' Teatros']
     },
     eventName: "Museu dos Coches",
     minAge: 40,
     maxAge: 52,
-    sex: ['Masculino', 'Feminino'] 
+    sex: ['Masculino', ' Feminino'] 
   },
 ];
 

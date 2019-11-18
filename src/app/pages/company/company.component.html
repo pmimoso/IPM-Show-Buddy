@@ -1,11 +1,28 @@
+
+<div class="list-wrapper">
+   
 <mat-list>
 <mat-list-item>
         <div class="card-wrapper" fxLayout="column">
-    <mat-card *ngFor="let request of companyRequests" class="request-card">
-        <p>{{request.requestOwner.username}}</p>
-        <p>{{request.eventName}}</p>
-        <p>{{request.requestOwner.tastes}}</p>
+         <mat-card *ngFor="let request of companyRequests; index as i" class="row request-card">
+                <div class = "col-3">
+                        <img src="assets/logo_small.png">
+                    </div>
+        <div class ="col-4 description-text">
+            <p>{{request.requestOwner.username}},  {{calculateAge(i)}}</p>
+            <p><b>Evento:</b> {{request.eventName}}</p>
+            <p><b>Gostos:</b> {{request.requestOwner.tastes}}</p>
+            
+        </div>
+        <div class="col-4 vertical-divider">
+            <div>
+                <p>Procura pessoa do sexo: <b>{{request.sex}}</b></p>
+                <p>Dos <b>{{request.minAge}}</b> aos <b>{{request.maxAge}}</b> anos de idade</p>
+                <button type="button" id = "invite-btn" class="btn btn-primary btn-block bottom-btn-style">Convidar</button>
+            </div>
+        </div>
     </mat-card>
         </div>
 </mat-list-item>
 </mat-list>
+</div>
