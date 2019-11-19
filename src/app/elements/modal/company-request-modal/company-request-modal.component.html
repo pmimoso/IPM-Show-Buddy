@@ -8,7 +8,12 @@
     <div class="form-group">
         <mat-form-field class="company-request-field">
             <mat-hint>Escolha o nome do evento a que deseja ir.</mat-hint>
-            <input matInput [(ngModel)]='eventName' placeholder="Nome do evento">
+            <input matInput [(ngModel)]='eventName' [matAutocomplete]="auto" [formControl]="showCtrl" placeholder="Nome do evento">
+            <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let show of filteredShows | async" [value]="show.name">
+                                  {{show.name}}
+                                </mat-option>
+          </mat-autocomplete>
         </mat-form-field>
         <mat-form-field class="company-request-field">
             <mat-hint>Defina a idade mínima da companhia que procura.</mat-hint>
