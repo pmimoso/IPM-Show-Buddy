@@ -1,4 +1,7 @@
-<div class="wrapper">
+
+        <div *ngIf="!showFound()">TODO</div>
+
+<div *ngIf="showFound()" class="wrapper">
         <div class="container">
                 <div class="row card-deck">
                         <img class="card-img-top img-fluid single-show-image" src={{show.eventImage}}>

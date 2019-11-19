@@ -23,6 +23,7 @@ import { PasswordErrorModalComponent } from './elements/modal/password-error-mod
 import { RequiredErrorModalComponent } from './elements/modal/required-error-modal/required-error-modal.component';
 import { CompanyRequestModalComponent } from './elements/modal/company-request-modal/company-request-modal.component';
 import { EventModalComponent } from './elements/modal/event-modal/event-modal.component';
+import { ShowSuggestionComponent } from './pages/show-suggestion/show-suggestion.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { EventModalComponent } from './elements/modal/event-modal/event-modal.co
     RequiredErrorModalComponent,
     CompanyRequestModalComponent,
     EventModalComponent,
+    ShowSuggestionComponent,
     
   ],
   imports: [

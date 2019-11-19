@@ -48,7 +48,7 @@ export class DashboardComponent implements OnInit {
     console.log(eventName);
     const modalRef = this.modal.open(EventModalComponent, { centered: true });
     modalRef.componentInstance.eventName = eventName;
-    modalRef.result.then().finally();
+    modalRef.result.then().catch(err => {}).finally();
   }
 
 }

@@ -8,7 +8,7 @@
                             <div class="form-group">
                                           <mat-form-field class="login-field">
                                               <mat-hint>Nome</mat-hint>
-                                              <input matInput [(ngModel)]='name' [matAutocomplete]="auto" [formControl]="showCtrl" placeholder="Nome do evento">
+                                              <input matInput [(ngModel)]='name' matTooltip="Basta pesquisar pelo nome do evento para o encontrar." [matAutocomplete]="auto" [formControl]="showCtrl" placeholder="Nome do evento">
                                               <mat-autocomplete #auto="matAutocomplete">
                                                         <mat-option *ngFor="let show of filteredShows | async" [value]="show.name">
                                                                       {{show.name}}

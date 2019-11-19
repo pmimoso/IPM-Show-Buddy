@@ -6,6 +6,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CompanyComponent } from './pages/company/company.component';
 import { RidesComponent } from './pages/rides/rides.component';
 import { TicketsComponent } from './pages/tickets/tickets.component';
+import { ShowSuggestionComponent } from './pages/show-suggestion/show-suggestion.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'suggestion',
+    component: ShowSuggestionComponent
   }
 ];
 
