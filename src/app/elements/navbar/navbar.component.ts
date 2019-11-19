@@ -45,4 +45,14 @@ export class NavbarComponent implements OnInit {
     this.loggedUserService.logoutUser(JSON.stringify(this.loggedUser));
     this.router.navigate(['/home']).finally();
   }
+
+  navigateThrough(): void {
+    if(this.loggedUser) {
+      this.router.navigate(['/dashboard']).finally();
+    } else {
+      this.router.navigate(['/home']).finally();
+    }
+  }
+
+
 }

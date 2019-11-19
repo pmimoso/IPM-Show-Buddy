@@ -31,7 +31,7 @@ export class LoginModalComponent implements OnInit {
     }
 
     else {
-      alert('deu merda');
+      //TODO: erros
     }
 
   }
