@@ -15,6 +15,8 @@ export class NavbarComponent implements OnInit {
 
   isCollapsed: boolean = true;
 
+  dropdownCollapsed: boolean = true;
+
   loggedUser: User;
 
   constructor(private modalService: NgbModal, private loggedUserService: LoggedUserService,
@@ -38,6 +40,11 @@ export class NavbarComponent implements OnInit {
 
   toggleCollapsed(): void {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  toggleDropdownCollapsed(): void {
+    event.preventDefault();
+    this.dropdownCollapsed = !this.dropdownCollapsed;
   }
 
   logout() {
