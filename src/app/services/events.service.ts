@@ -55,4 +55,8 @@ export class EventsService {
   getAllShows() {
     return this.showList;
   }
+
+  getShowByName(showName: string) {
+    return this.showList.find(show => show.name == showName);
+  }
 }

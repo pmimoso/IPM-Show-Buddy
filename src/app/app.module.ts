@@ -22,6 +22,7 @@ import { ConfirmationModalComponent } from './elements/modal/confirmation-modal/
 import { PasswordErrorModalComponent } from './elements/modal/password-error-modal/password-error-modal.component';
 import { RequiredErrorModalComponent } from './elements/modal/required-error-modal/required-error-modal.component';
 import { CompanyRequestModalComponent } from './elements/modal/company-request-modal/company-request-modal.component';
+import { EventModalComponent } from './elements/modal/event-modal/event-modal.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { CompanyRequestModalComponent } from './elements/modal/company-request-m
     PasswordErrorModalComponent,
     RequiredErrorModalComponent,
     CompanyRequestModalComponent,
+    EventModalComponent,
     
   ],
   imports: [
@@ -68,7 +70,8 @@ import { CompanyRequestModalComponent } from './elements/modal/company-request-m
     ConfirmationModalComponent,
     PasswordErrorModalComponent,
     RequiredErrorModalComponent,
-    CompanyRequestModalComponent
+    CompanyRequestModalComponent,
+    EventModalComponent
   ],
   bootstrap: [AppComponent]
 })

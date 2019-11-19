@@ -32,13 +32,13 @@
                                               <mat-datepicker #picker></mat-datepicker>
                                           </mat-form-field>
                                       </div>
-                                      <button type="button" class="btn btn-primary btn-lg btn-block bottom-btn-style">Pesquisar</button>
+                                      <button type="button" class="btn btn-primary btn-lg btn-block bottom-btn-style" (click)="openEventModal(name)">Pesquisar</button>
                      </div>
                      <div class="vertical-divider"></div>
                      <div class="col-sm dashboard-item">
                             <h3><div class="dashboard-text">COMPANHIA</div></h3>
                             <button type="button" class="btn btn-primary btn-lg btn-block btn-style" (click)="openRequestModal()">Pedir companhia</button>
-                            <button type="button" class="btn btn-primary btn-lg btn-block bottom-btn-style">Listar pedidos</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block bottom-btn-style" routerLink="/company">Listar pedidos</button>
 
                      </div>
                      <div class="vertical-divider"></div>

@@ -5,6 +5,7 @@ import { CompanyRequestModalComponent } from 'src/app/elements/modal/company-req
 import { EventsService } from 'src/app/services/events.service';
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import { EventModalComponent } from 'src/app/elements/modal/event-modal/event-modal.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -40,6 +41,14 @@ export class DashboardComponent implements OnInit {
 
   openRequestModal() {
     this.modal.open(CompanyRequestModalComponent, { centered: true});
+  }
+
+  //TODO: if event does not exist, popup another modal
+  openEventModal(eventName: string) {
+    console.log(eventName);
+    const modalRef = this.modal.open(EventModalComponent, { centered: true });
+    modalRef.componentInstance.eventName = eventName;
+    modalRef.result.then().finally();
   }
 
 }
