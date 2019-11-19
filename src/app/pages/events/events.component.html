@@ -1,1 +1,14 @@
-<p>FAZER PÁG. DE EVENTOS</p>
+<div class="wrapper">
+<div class="container">
+        <div class="row card-deck">
+            <div *ngFor="let event of eventList" class="mt-4 col-4">
+                <img class="card-img-top img-fluid show-image" src={{event.eventImage}}>
+                <div class="card-body">
+                    <h4 class="card-title"><b>{{event.name}}</b> ({{event.eventType}})</h4>
+                    <h5 class = "card-text">Localização: {{event.location}}</h5>
+                    <h6 class = "card-text">Data: {{event.startDate.getDate()}}/{{event.startDate.getMonth()}}/{{event.startDate.getFullYear()}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
