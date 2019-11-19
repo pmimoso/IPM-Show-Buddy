@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { MatCardModule, MatFormFieldModule, MatTooltipModule, MatInputModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule, MatListModule} from '@angular/material';
+import { MatCardModule, MatFormFieldModule, MatTooltipModule, MatAutocompleteModule, MatInputModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule, MatListModule} from '@angular/material';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -57,6 +57,7 @@ import { CompanyRequestModalComponent } from './elements/modal/company-request-m
     MatSelectModule,
     MatListModule,
     MatTooltipModule,
+    MatAutocompleteModule,
     FormsModule,
     ReactiveFormsModule,
   ],
