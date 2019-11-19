@@ -42,3 +42,23 @@
     margin-top: 2%;
   }
 
+  .request-btn-wrapper {
+    float: right;
+    margin-top: 5%;
+    margin-right: 14%;
+  }
+
+  .request-btn {
+    font-size: 50px;
+    transform: scale(1.6);
+    transition: 1s;
+}
+
+.request-btn:hover {
+  font-size: 50px;
+  transform: scale(1.6);
+  background-image: radial-gradient(rgb(144, 149, 211), white);
+  background-size: 100%;
+}
+
+

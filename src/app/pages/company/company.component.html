@@ -2,24 +2,22 @@
 
     <mat-list>
         <mat-list-item>
-
             <div class="card-wrapper col-7">
                 <mat-card *ngFor="let request of companyRequests; index as i" id="r-card" class="row request-card">
                     <div class="col-3">
-                        <img src="assets/logo_small.png">
+                        <img src={{request.requestOwner.profilePic}}>
                     </div>
                     <div class="col-4 description-text">
                         <p>{{request.requestOwner.username}}, {{calculateAge(i)}}</p>
                         <p><b>Evento:</b> {{request.eventName}}</p>
                         <p><b>Gostos:</b> {{request.requestOwner.tastes}}</p>
-
                     </div>
                     <div class="col-4 vertical-divider">
                         <div>
                             <p>Procura pessoa do sexo: <b>{{request.sex}}</b></p>
                             <p>Dos <b>{{request.minAge}}</b> aos <b>{{request.maxAge}}</b> anos de idade</p>
                             <button *ngIf="isCurrentUser(i)" type="button" id="erase-btn"
-                                class="btn btn-primary btn-block bottom-btn-style">Eliminar</button>
+                                class="btn btn-primary btn-block bottom-btn-style" (click)="deleteRequest(i)">Eliminar</button>
                             <button *ngIf="!isCurrentUser(i)" type="button" id="invite-btn"
                                 class="btn btn-primary btn-block bottom-btn-style">Convidar</button>
                         </div>
@@ -28,4 +26,6 @@
             </div>
         </mat-list-item>
     </mat-list>
+
+    <div class="request-btn-wrapper"><button mat-fab color="primary" class="request-btn" (click)="openRequestModal()">+</button></div>
 </div>

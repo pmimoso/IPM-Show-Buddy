@@ -9,6 +9,7 @@ export class AuthenticationService {
     username: "admin",
     password: "admin",
     birthday: new Date("1990/10/02"),
+    profilePic: "assets/ava.png",
     tastes: null
   }
 

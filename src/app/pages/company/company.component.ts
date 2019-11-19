@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestsService } from 'src/app/services/requests.service';
 import { LoggedUserService } from 'src/app/services/logged-user.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CompanyRequestModalComponent } from 'src/app/elements/modal/company-request-modal/company-request-modal.component';
 
 @Component({
   selector: 'app-company',
@@ -11,7 +13,8 @@ export class CompanyComponent implements OnInit {
 
   companyRequests: CompanyRequest[] = [];
 
-  constructor(private requestService: RequestsService, private loggedUserService: LoggedUserService) {
+  constructor(private requestService: RequestsService, private loggedUserService: LoggedUserService,
+    private modal: NgbModal) {
     this.companyRequests = this.requestService.getCompanyRequestList();
     console.log(this.companyRequests);
   }
@@ -26,11 +29,22 @@ export class CompanyComponent implements OnInit {
 
   isCurrentUser(requestIndex: number) {
     const loggedUser = JSON.parse(localStorage.getItem('loggedUser'));
-    if(loggedUser) {
-      document.getElementById("r-card").style.border = "3px solid darkblue";
-    return this.companyRequests[requestIndex].requestOwner.username == loggedUser.username;
+    if (loggedUser) {
+      const loggedUserHasRequests = this.requestService.getCompanyRequestList().filter(req => req.requestOwner.username == loggedUser.username);
+      if (loggedUserHasRequests.length > 0) {
+        document.getElementById("r-card").style.border = "3px solid darkblue";
+        return this.companyRequests[requestIndex].requestOwner.username == loggedUser.username;
+      }
     }
     return false;
+  }
+
+  openRequestModal() {
+    this.modal.open(CompanyRequestModalComponent, { centered: true });
+  }
+
+  deleteRequest(requestIndex: number) {
+    this.requestService.deleteCompanyRequest(requestIndex);
   }
 
   ngOnInit() {
