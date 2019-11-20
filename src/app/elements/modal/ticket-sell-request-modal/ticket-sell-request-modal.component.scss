@@ -1,0 +1,40 @@
+.confirmation-message {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.modal-image {
+    height: auto;
+    display: block;
+    margin: auto;
+    width: 20%;
+}
+
+::ng-deep .cdk-overlay-container {
+    z-index: 1200 !important;
+  }
+
+  .form-group {
+    margin-top: 5%;
+  }
+
+  .company-request-field {
+    display: inline;
+  }
+
+  .company-button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .company-request-btn {
+    color: white;
+    background-color: #9095d3;
+    transition: 1s;
+  }
+
+  .company-request-btn:hover {
+    color: white;
+    background-color: rgb(73, 81, 163);
+  }

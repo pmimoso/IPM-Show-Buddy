@@ -25,6 +25,7 @@ import { CompanyRequestModalComponent } from './elements/modal/company-request-m
 import { EventModalComponent } from './elements/modal/event-modal/event-modal.component';
 import { ShowSuggestionComponent } from './pages/show-suggestion/show-suggestion.component';
 import { SuggestionConfirmationComponent } from './elements/modal/suggestion-confirmation/suggestion-confirmation.component';
+import { TicketSellRequestModalComponent } from './elements/modal/ticket-sell-request-modal/ticket-sell-request-modal.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { SuggestionConfirmationComponent } from './elements/modal/suggestion-con
     EventModalComponent,
     ShowSuggestionComponent,
     SuggestionConfirmationComponent,
+    TicketSellRequestModalComponent,
     
   ],
   imports: [
@@ -75,7 +77,8 @@ import { SuggestionConfirmationComponent } from './elements/modal/suggestion-con
     RequiredErrorModalComponent,
     CompanyRequestModalComponent,
     EventModalComponent,
-    SuggestionConfirmationComponent
+    SuggestionConfirmationComponent,
+    TicketSellRequestModalComponent
   ],
   bootstrap: [AppComponent]
 })

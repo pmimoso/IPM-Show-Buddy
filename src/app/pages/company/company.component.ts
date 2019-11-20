@@ -28,6 +28,9 @@ export class CompanyComponent implements OnInit {
     this.allEvents = this.eventsService.getAllShows();
   }
 
+  ngOnInit() {
+  }
+
   //TODO: put on service
   public calculateAge(requestIndex: number): number {
     const bDay = new Date(this.companyRequests[requestIndex].requestOwner.birthday);
@@ -66,7 +69,5 @@ export class CompanyComponent implements OnInit {
   return cRequest;
 }
 
-  ngOnInit() {
-  }
 
 }

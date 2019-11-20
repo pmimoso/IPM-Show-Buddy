@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl } from '@angular/forms';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { RequestsService } from 'src/app/services/requests.service';
-import { LoggedUserService } from 'src/app/services/logged-user.service';
 import { Router } from '@angular/router';
+import { LoggedUserService } from 'src/app/services/logged-user.service';
+import { EventsService } from 'src/app/services/events.service';
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-import { EventsService } from 'src/app/services/events.service';
 
 @Component({
-  selector: 'app-company-request-modal',
-  templateUrl: './company-request-modal.component.html',
-  styleUrls: ['./company-request-modal.component.scss']
+  selector: 'app-ticket-sell-request-modal',
+  templateUrl: './ticket-sell-request-modal.component.html',
+  styleUrls: ['./ticket-sell-request-modal.component.scss']
 })
-export class CompanyRequestModalComponent implements OnInit {
+export class TicketSellRequestModalComponent implements OnInit {
 
-  sex = new FormControl();
+  neg = new FormControl();
+  negList: string[] = ['Sim', 'Não'];
   showCtrl = new FormControl();
   showList: Show[] = [];
   filteredShows: Observable<Show[]>;
-  sexList: string[] = ['Feminino', 'Masculino', 'Outro'];
 
   constructor(public activeModal: NgbActiveModal, private requestService: RequestsService, 
     private loggedUserService: LoggedUserService, private route: Router, 
@@ -45,20 +45,21 @@ export class CompanyRequestModalComponent implements OnInit {
     this.activeModal.close();
   }
 
-  makeCompanyRequest(eventName: string, minAge: number, maxAge: number, sex: string[]) {
+  makeTicketSellRequest(eventName: string, location: string, price: number, negotiable: string) {
     const currentUser: User = JSON.parse(this.loggedUserService.getCurrentUser());
-    const request: CompanyRequest = {
+
+    const request: TicketSellRequest = {
       requestOwner: currentUser,
       eventName: eventName,
-      minAge: minAge,
-      maxAge: maxAge,
-      sex: sex
+      price: price,
+      sellLocation: location,
+      negotiable: negotiable
     }
-    this.requestService.doCompanyRequest(request);
-    console.log(this.requestService.getCompanyRequestList());
+    this.requestService.doTicketSellRequest(request);
     this.closeModal();
-    this.route.navigate(['/company']).finally();
+    this.route.navigate(['/tickets']).finally();
 
   }
+
 
 }

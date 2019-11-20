@@ -5,6 +5,34 @@ import { Injectable } from '@angular/core';
 })
 export class RequestsService {
 
+  ticketSellRequests: TicketSellRequest[] = [ {
+    requestOwner: {
+    username: "Sandro_Malandro",
+    password: "Sandro",
+    birthday: new Date("1946/01/12"),
+    profilePic: "assets/0.png",
+    tastes: ['Rock', 'Rap',]
+    },
+    eventName: "Festival da Sardinha",
+    price: 50,
+    sellLocation: 'Baixa da Banheira',
+    negotiable: "Sim" 
+  },
+  {
+    requestOwner: {
+    username: "LeonelFragoso",
+    password: "Leonel",
+    birthday: new Date("1988/08/19"),
+    profilePic: "assets/3.png",
+    tastes: ['Museus']
+    },
+    eventName: "Zambujo in Zambujeira",
+    price: 25,
+    sellLocation: 'Fanqueiro',
+    negotiable: "Não" 
+  }
+];
+
   //TODO: popular isto c cenas random
   companyRequests: CompanyRequest[] = [ {
     requestOwner: {
@@ -73,4 +101,17 @@ export class RequestsService {
   deleteCompanyRequest(requestIndex: number) {
     this.companyRequests.splice(requestIndex, 1);
   }
+
+  getTicketSellRequestList() {
+    return this.ticketSellRequests;
+  }
+
+  doTicketSellRequest(ticketReq: TicketSellRequest) {
+    this.ticketSellRequests.unshift(ticketReq);
+  }
+
+  deleteTicketSellRequest(ticketRequestIndex: number) {
+    this.ticketSellRequests.splice(ticketRequestIndex, 1);
+  }
+
 }

@@ -1,0 +1,36 @@
+<div class="modal-body">
+        <img ngbAutofocus class="modal-image" src="../../../../assets/guitar.png">
+        <div class="confirmation-message">
+            Aqui podes colocar um bilhete de um evento à venda.
+        </div>
+    
+        <div class="form-group">
+            <mat-form-field class="company-request-field">
+                <mat-hint>Escolha o evento.</mat-hint>
+                <input matInput [(ngModel)]='eventName' [matAutocomplete]="auto" [formControl]="showCtrl" placeholder="Nome do evento">
+                <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let show of filteredShows | async" [value]="show.name">
+                                      {{show.name}}
+                                    </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+            <mat-form-field class="company-request-field">
+                <mat-hint>Indique o local de venda.</mat-hint>
+                <input matInput [(ngModel)]='ticketSellLocation' placeholder="Localização">
+            </mat-form-field>
+            <mat-form-field class="company-request-field">
+                <mat-hint>Defina o preço.</mat-hint>
+                <input matInput type="number" [(ngModel)]='price' placeholder="Preço (em euros)">
+            </mat-form-field>
+    
+            <mat-form-field class="company-request-field">
+                <mat-hint>Negociável?</mat-hint>
+                <mat-select [formControl]="neg" [(ngModel)]='negotiable'>
+                    <mat-option #negotiable *ngFor="let neg of negList" [value]="neg">{{neg}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    
+        <div class="company-button-wrapper">
+                <button mat-raised-button type="button" class="company-request-btn" (click)="makeTicketSellRequest(eventName, ticketSellLocation, price, negotiable)">Publicar</button>
+            </div>
