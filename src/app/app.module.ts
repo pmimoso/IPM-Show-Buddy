@@ -26,7 +26,6 @@ import { EventModalComponent } from './elements/modal/event-modal/event-modal.co
 import { ShowSuggestionComponent } from './pages/show-suggestion/show-suggestion.component';
 import { SuggestionConfirmationComponent } from './elements/modal/suggestion-confirmation/suggestion-confirmation.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

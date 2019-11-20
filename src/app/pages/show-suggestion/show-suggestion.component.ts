@@ -35,7 +35,7 @@ export class ShowSuggestionComponent implements OnInit {
 
     this.eventSuggestionService.addEventSuggestion(this.loggedUser, suggestion);
     
-    this.modal.open(SuggestionConfirmationComponent, {centered: true});
+    this.modal.open(SuggestionConfirmationComponent, {centered: true}); 
 
 
 

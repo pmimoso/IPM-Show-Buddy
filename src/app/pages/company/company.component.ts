@@ -3,6 +3,8 @@ import { RequestsService } from 'src/app/services/requests.service';
 import { LoggedUserService } from 'src/app/services/logged-user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CompanyRequestModalComponent } from 'src/app/elements/modal/company-request-modal/company-request-modal.component';
+import { EventsService } from 'src/app/services/events.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-company',
@@ -13,12 +15,17 @@ export class CompanyComponent implements OnInit {
 
   companyRequests: CompanyRequest[] = [];
 
+  allEvents: Show[] = [];
+  eventsCtrl = new FormControl();
+
   loggedUser: User = null;
 
   constructor(private requestService: RequestsService,
-    private modal: NgbModal, private loggedUserService: LoggedUserService) {
+    private modal: NgbModal, private loggedUserService: LoggedUserService,
+    private eventsService: EventsService) {
     this.companyRequests = this.requestService.getCompanyRequestList();
     this.loggedUser = JSON.parse(this.loggedUserService.getCurrentUser());
+    this.allEvents = this.eventsService.getAllShows();
   }
 
   //TODO: put on service
@@ -48,6 +55,16 @@ export class CompanyComponent implements OnInit {
   deleteRequest(requestIndex: number) {
     this.requestService.deleteCompanyRequest(requestIndex);
   }
+
+  filter(cRequest: CompanyRequest[], showName: string): CompanyRequest[] {
+
+    if(showName) {
+    let result: CompanyRequest[] = [];
+    result = cRequest.filter(req => req.eventName == showName);
+    return result;
+  }
+  return cRequest;
+}
 
   ngOnInit() {
   }
