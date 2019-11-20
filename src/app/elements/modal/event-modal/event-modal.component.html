@@ -1,5 +1,6 @@
-
-        <div *ngIf="!showFound()">TODO</div>
+<div class="not-found-modal" *ngIf="!showFound()"><div class="not-found-text">O evento que procuraste não existe no nosso sistema. ☹️</div>
+        <button type="button" class="btn btn-primary btn-style" (click)="goToSuggestion()">SUGERIR NOVO EVENTO</button>
+</div>
 
 <div *ngIf="showFound()" class="wrapper">
         <div class="container">

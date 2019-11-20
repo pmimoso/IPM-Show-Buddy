@@ -24,16 +24,15 @@
     }
   }
 
-
-
 .suggest-btn {
     transform: translateY(25%);
     transition: 1.5s;
-    border: 1px solid rgba(42, 51, 124);
+    background-color: rgb(144, 149, 211);
+    border: 1px solid 
 }
 
 .suggest-btn:hover {
     transform: translateY(25%);
-    background-color: green;
+    background-color: rgba(42, 51, 124);
     border: 1px solid rgba(42, 51, 124);
 }

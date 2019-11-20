@@ -24,6 +24,7 @@ import { RequiredErrorModalComponent } from './elements/modal/required-error-mod
 import { CompanyRequestModalComponent } from './elements/modal/company-request-modal/company-request-modal.component';
 import { EventModalComponent } from './elements/modal/event-modal/event-modal.component';
 import { ShowSuggestionComponent } from './pages/show-suggestion/show-suggestion.component';
+import { SuggestionConfirmationComponent } from './elements/modal/suggestion-confirmation/suggestion-confirmation.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { ShowSuggestionComponent } from './pages/show-suggestion/show-suggestion
     CompanyRequestModalComponent,
     EventModalComponent,
     ShowSuggestionComponent,
+    SuggestionConfirmationComponent,
     
   ],
   imports: [
@@ -73,7 +75,8 @@ import { ShowSuggestionComponent } from './pages/show-suggestion/show-suggestion
     PasswordErrorModalComponent,
     RequiredErrorModalComponent,
     CompanyRequestModalComponent,
-    EventModalComponent
+    EventModalComponent,
+    SuggestionConfirmationComponent
   ],
   bootstrap: [AppComponent]
 })

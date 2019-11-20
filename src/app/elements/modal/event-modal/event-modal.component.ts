@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventsService } from 'src/app/services/events.service';
+import { Router } from '@angular/router';
+import { LoggedUserService } from 'src/app/services/logged-user.service';
 
 @Component({
   selector: 'app-event-modal',
@@ -15,15 +17,16 @@ export class EventModalComponent implements OnInit {
 
   found: boolean = false;
 
-  constructor(public activeModal: NgbActiveModal, private showService: EventsService) { }
+
+  constructor(public activeModal: NgbActiveModal, private showService: EventsService
+    , private router: Router) { }
 
   ngOnInit() {
-    console.log(this.eventName);
+
     this.show = this.showService.getShowByName(this.eventName);
   }
 
   showFound(): boolean {
-    console.log(this.show);
     if (this.show == undefined) {
       this.found = false;
     }
@@ -35,6 +38,11 @@ export class EventModalComponent implements OnInit {
 
   closeModal() {
     this.activeModal.close();
+  }
+
+  goToSuggestion(): void {
+    this.closeModal();
+    this.router.navigate(['/suggestion']);
   }
 
 }

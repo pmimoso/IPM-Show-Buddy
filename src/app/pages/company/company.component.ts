@@ -13,10 +13,12 @@ export class CompanyComponent implements OnInit {
 
   companyRequests: CompanyRequest[] = [];
 
-  constructor(private requestService: RequestsService, private loggedUserService: LoggedUserService,
-    private modal: NgbModal) {
+  loggedUser: User = null;
+
+  constructor(private requestService: RequestsService,
+    private modal: NgbModal, private loggedUserService: LoggedUserService) {
     this.companyRequests = this.requestService.getCompanyRequestList();
-    console.log(this.companyRequests);
+    this.loggedUser = JSON.parse(this.loggedUserService.getCurrentUser());
   }
 
   //TODO: put on service

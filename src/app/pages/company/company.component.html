@@ -18,7 +18,7 @@
                             <p>Dos <b>{{request.minAge}}</b> aos <b>{{request.maxAge}}</b> anos de idade</p>
                             <button *ngIf="isCurrentUser(i)" type="button" id="erase-btn"
                                 class="btn btn-primary btn-block bottom-btn-style" (click)="deleteRequest(i)">Eliminar</button>
-                            <button *ngIf="!isCurrentUser(i)" type="button" id="invite-btn"
+                            <button *ngIf="!isCurrentUser(i) && loggedUser" type="button" id="invite-btn"
                                 class="btn btn-primary btn-block bottom-btn-style">Convidar</button>
                         </div>
                     </div>
@@ -27,5 +27,5 @@
         </mat-list-item>
     </mat-list>
 
-    <div class="request-btn-wrapper"><button mat-fab color="primary" class="request-btn" matTooltip="Clica para fazer um novo pedido de companhia" (click)="openRequestModal()">+</button></div>
+    <div class="request-btn-wrapper"><button mat-fab color="primary" *ngIf="loggedUser" class="request-btn" matTooltip="Clica para fazer um novo pedido de companhia" (click)="openRequestModal()">+</button></div>
 </div>

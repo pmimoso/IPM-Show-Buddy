@@ -13,8 +13,29 @@
 
 .card-body:hover {
     width: 100%;
-    height: 12vw;
+    //height: 12vw;
     object-fit: cover;
     background-image: linear-gradient(rgb(144, 149, 211), white);
     background-size: 100%;
+}
+
+.not-found-modal {
+    text-align: center;
+}
+
+.not-found-text {
+    margin-top: 2%;
+}
+
+.btn-style {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: rgb(144, 149, 211);
+    border: rgb(24, 31, 102);
+    font-family: 'Bree Serif';
+    transition: 1s;
+}
+
+.btn-style:hover {
+    background-color: rgb(24, 31, 102);
 }
