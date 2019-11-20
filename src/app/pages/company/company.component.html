@@ -10,11 +10,11 @@
                     <div class="col-4 description-text">
                         <p>{{request.requestOwner.username}}, {{calculateAge(i)}}</p>
                         <p><b>Evento:</b> {{request.eventName}}</p>
-                        <p><b>Gostos:</b> {{request.requestOwner.tastes}}</p>
+                        <p><b>Gostos:</b> {{request.requestOwner.tastes.join(', ')}}</p>
                     </div>
                     <div class="col-4 vertical-divider">
                         <div>
-                            <p>Procura pessoa do sexo: <b>{{request.sex}}</b></p>
+                            <p>Procura pessoa do sexo: <b>{{request.sex.join(', ')}}</b></p>
                             <p>Dos <b>{{request.minAge}}</b> aos <b>{{request.maxAge}}</b> anos de idade</p>
                             <button *ngIf="isCurrentUser(i)" type="button" id="erase-btn"
                                 class="btn btn-primary btn-block bottom-btn-style" (click)="deleteRequest(i)">Eliminar</button>

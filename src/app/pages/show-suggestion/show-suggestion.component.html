@@ -1,1 +1,42 @@
-<p>show-suggestion works!</p>
+<div class="suggestion-wrapper">
+    <div class="container">
+        <div class="row suggestion-description"><h5>Nesta página poderás fazer a sugestão de um novo evento, que achas que
+            devia ser adicionado à nossa página. Após uma análise por parte do nosso staff, o evento será, ou não,
+            adicionado ao nosso sistema.</h5>
+        </div>
+        <div class="form-group">
+                <mat-form-field appearance="fill">
+                              <mat-hint>Introduza o nome do evento a sugerir.</mat-hint>
+                              <input  matInput [(ngModel)]='eventName' placeholder="Nome do evento">
+                            </mat-form-field>
+                            <mat-form-field appearance="fill">
+                                    <mat-hint>Escolha o tipo de evento que procura.</mat-hint>
+                                    <mat-select [formControl]="types" [(ngModel)]='eventT'>
+                                        <mat-option #eventT *ngFor="let type of eventType" [value]="type">{{type}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                        <mat-hint>Introduza a localização do novo evento a sugerir.</mat-hint>
+                                        <input  matInput [(ngModel)]='eventLocation' placeholder="Localização do evento">
+                                      </mat-form-field>
+                                      <mat-form-field appearance="fill" value="">
+                                            <mat-hint>Insira a data de início do evento</mat-hint>
+                                            <input matInput [matDatepicker]="picker" [(ngModel)]='startDate' placeholder="Data de início">
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                        </mat-form-field>
+                                        <mat-form-field appearance="fill" value="">
+                                                <mat-hint>Insira a data do final do evento</mat-hint>
+                                                <input matInput matTooltip="Só necessita de colocar a data de fim do evento se o mesmo se tratar de um festival,
+                                                por exemplo, em que a duração costuma ser superior a um dia." [matDatepicker]="picker2" [(ngModel)]='endDate' placeholder="Data de fim">
+                                                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker2></mat-datepicker>
+                                            </mat-form-field>
+
+                                            <button type="button" class="btn btn-primary suggest-btn" (click)="submitSuggestion(eventName, eventT, eventLocation, startDate, endDate)">SUGERIR NOVO EVENTO</button>
+          
+            </div>
+           
+    </div>
+
+</div>

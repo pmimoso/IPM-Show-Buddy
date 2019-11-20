@@ -3,5 +3,6 @@ interface Show {
     location: string,
     eventType: string,
     startDate: Date,
+    endDate?: Date,
     eventImage?: string
 }
