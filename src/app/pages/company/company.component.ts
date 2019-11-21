@@ -5,6 +5,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CompanyRequestModalComponent } from 'src/app/elements/modal/company-request-modal/company-request-modal.component';
 import { EventsService } from 'src/app/services/events.service';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material';
+import { ProgressSpinerComponent } from 'src/app/elements/progress-spiner/progress-spiner.component';
 
 @Component({
   selector: 'app-company',
@@ -22,7 +24,7 @@ export class CompanyComponent implements OnInit {
 
   constructor(private requestService: RequestsService,
     private modal: NgbModal, private loggedUserService: LoggedUserService,
-    private eventsService: EventsService) {
+    private eventsService: EventsService, public dialog: MatDialog) {
     this.companyRequests = this.requestService.getCompanyRequestList();
     this.loggedUser = JSON.parse(this.loggedUserService.getCurrentUser());
     this.allEvents = this.eventsService.getAllShows();
@@ -56,6 +58,8 @@ export class CompanyComponent implements OnInit {
   }
 
   deleteRequest(requestIndex: number) {
+    const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'DelCompanyComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
+    dialogRef.afterClosed().subscribe(res => {});
     this.requestService.deleteCompanyRequest(requestIndex);
   }
 

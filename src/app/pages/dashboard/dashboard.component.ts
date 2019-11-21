@@ -6,6 +6,8 @@ import { EventsService } from 'src/app/services/events.service';
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { EventModalComponent } from 'src/app/elements/modal/event-modal/event-modal.component';
+import { TicketSellRequestModalComponent } from 'src/app/elements/modal/ticket-sell-request-modal/ticket-sell-request-modal.component';
+import { RideOfferRequestModalComponent } from 'src/app/elements/modal/ride-offer-request-modal/ride-offer-request-modal.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -41,6 +43,14 @@ export class DashboardComponent implements OnInit {
 
   openRequestModal() {
     this.modal.open(CompanyRequestModalComponent, { centered: true});
+  }
+
+  openTicketRequestModal() {
+    this.modal.open(TicketSellRequestModalComponent, { centered: true});
+  }
+
+  openRideRequestModal() {
+    this.modal.open(RideOfferRequestModalComponent, { centered: true});
   }
 
   //TODO: if event does not exist, popup another modal

@@ -7,6 +7,8 @@ import { LoggedUserService } from 'src/app/services/logged-user.service';
 import { EventsService } from 'src/app/services/events.service';
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import { ProgressSpinerComponent } from '../../progress-spiner/progress-spiner.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-ticket-sell-request-modal',
@@ -23,7 +25,7 @@ export class TicketSellRequestModalComponent implements OnInit {
 
   constructor(public activeModal: NgbActiveModal, private requestService: RequestsService, 
     private loggedUserService: LoggedUserService, private route: Router, 
-    private eventsService: EventsService) {
+    private eventsService: EventsService, public dialog: MatDialog) {
       this.filteredShows = this.showCtrl.valueChanges
       .pipe(
         startWith('') ,
@@ -45,6 +47,12 @@ export class TicketSellRequestModalComponent implements OnInit {
     this.activeModal.close();
   }
 
+  loadingToTicket() {
+    const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'TicketComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
+    dialogRef.afterClosed().subscribe(res => {});
+  }
+
+
   makeTicketSellRequest(eventName: string, location: string, price: number, negotiable: string) {
     const currentUser: User = JSON.parse(this.loggedUserService.getCurrentUser());
 
@@ -56,9 +64,8 @@ export class TicketSellRequestModalComponent implements OnInit {
       negotiable: negotiable
     }
     this.requestService.doTicketSellRequest(request);
+    this.loadingToTicket();
     this.closeModal();
-    this.route.navigate(['/tickets']).finally();
-
   }
 
 

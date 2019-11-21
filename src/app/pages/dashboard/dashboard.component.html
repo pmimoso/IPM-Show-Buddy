@@ -44,15 +44,15 @@
                      <div class="vertical-divider"></div>
                      <div class="col-sm dashboard-item">
                             <h3><div class="dashboard-text">BOLEIA</div></h3>
-                            <button type="button" class="btn btn-primary btn-lg btn-block btn-style">Pedir boleia</button>
-                            <button type="button" class="btn btn-primary btn-lg btn-block bottom-btn-style">Listar boleias</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block btn-style" (click)="openRideRequestModal()">Pedir boleia</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block bottom-btn-style" routerLink="/ride">Listar boleias</button>
 
                      </div>
                      <div class="vertical-divider"></div>
                      <div class="col-sm dashboard-item">
                             <h3><div class="dashboard-text">BILHETES</div></h3>
-                            <button type="button" class="btn btn-primary btn-lg btn-block btn-style">Vender bilhete</button>
-                            <button type="button" class="btn btn-primary btn-lg btn-block bottom-btn-style">Bilhetes à venda</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block btn-style" (click)="openTicketRequestModal()">Vender bilhete</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block bottom-btn-style" routerLink="/tickets">Bilhetes à venda</button>
                      </div>
 
               </div>

@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { EventsService } from 'src/app/services/events.service';
+import { MatDialog } from '@angular/material';
+import { ProgressSpinerComponent } from '../../progress-spiner/progress-spiner.component';
 
 @Component({
   selector: 'app-company-request-modal',
@@ -23,7 +25,7 @@ export class CompanyRequestModalComponent implements OnInit {
 
   constructor(public activeModal: NgbActiveModal, private requestService: RequestsService, 
     private loggedUserService: LoggedUserService, private route: Router, 
-    private eventsService: EventsService) {
+    private eventsService: EventsService, public dialog: MatDialog) {
       this.filteredShows = this.showCtrl.valueChanges
       .pipe(
         startWith('') ,
@@ -45,6 +47,11 @@ export class CompanyRequestModalComponent implements OnInit {
     this.activeModal.close();
   }
 
+  loadingToCompany() {
+    const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'CompanyComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
+    dialogRef.afterClosed().subscribe(res => {});
+  }
+
   makeCompanyRequest(eventName: string, minAge: number, maxAge: number, sex: string[]) {
     const currentUser: User = JSON.parse(this.loggedUserService.getCurrentUser());
     const request: CompanyRequest = {
@@ -55,9 +62,8 @@ export class CompanyRequestModalComponent implements OnInit {
       sex: sex
     }
     this.requestService.doCompanyRequest(request);
-    console.log(this.requestService.getCompanyRequestList());
+    this.loadingToCompany();
     this.closeModal();
-    this.route.navigate(['/company']).finally();
 
   }
 

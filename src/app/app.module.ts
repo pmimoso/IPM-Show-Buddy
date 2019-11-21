@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { MatCardModule, MatFormFieldModule, MatTooltipModule, MatAutocompleteModule, MatInputModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule, MatListModule} from '@angular/material';
+import { MatCardModule, MatFormFieldModule, MatProgressSpinnerModule, MatTooltipModule, MatAutocompleteModule, MatInputModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule, MatListModule} from '@angular/material';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -30,6 +30,7 @@ import { ShowSuggestionComponent } from './pages/show-suggestion/show-suggestion
 import { SuggestionConfirmationComponent } from './elements/modal/suggestion-confirmation/suggestion-confirmation.component';
 import { TicketSellRequestModalComponent } from './elements/modal/ticket-sell-request-modal/ticket-sell-request-modal.component';
 import { RideOfferRequestModalComponent } from './elements/modal/ride-offer-request-modal/ride-offer-request-modal.component';
+import { ProgressSpinerComponent } from './elements/progress-spiner/progress-spiner.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { RideOfferRequestModalComponent } from './elements/modal/ride-offer-requ
     SuggestionConfirmationComponent,
     TicketSellRequestModalComponent,
     RideOfferRequestModalComponent,
+    ProgressSpinerComponent,
     
   ],
   imports: [
@@ -72,6 +74,8 @@ import { RideOfferRequestModalComponent } from './elements/modal/ride-offer-requ
     MatListModule,
     MatTooltipModule,
     MatAutocompleteModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
   ],
@@ -86,7 +90,8 @@ import { RideOfferRequestModalComponent } from './elements/modal/ride-offer-requ
     EventModalComponent,
     SuggestionConfirmationComponent,
     TicketSellRequestModalComponent,
-    RideOfferRequestModalComponent
+    RideOfferRequestModalComponent,
+    ProgressSpinerComponent
   ],
   bootstrap: [AppComponent]
 })

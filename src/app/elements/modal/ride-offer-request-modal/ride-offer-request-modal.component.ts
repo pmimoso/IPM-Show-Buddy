@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { LoggedUserService } from 'src/app/services/logged-user.service';
 import { EventsService } from 'src/app/services/events.service';
 import {map, startWith} from 'rxjs/operators';
+import { MatDialog } from '@angular/material';
+import { ProgressSpinerComponent } from '../../progress-spiner/progress-spiner.component';
 
 @Component({
   selector: 'app-ride-offer-request-modal',
@@ -21,7 +23,7 @@ export class RideOfferRequestModalComponent implements OnInit {
 
   constructor(public activeModal: NgbActiveModal, private requestService: RequestsService, 
     private loggedUserService: LoggedUserService, private route: Router, 
-    private eventsService: EventsService) {
+    private eventsService: EventsService, public dialog: MatDialog) {
       this.filteredShows = this.showCtrl.valueChanges
       .pipe(
         startWith('') ,
@@ -44,6 +46,11 @@ export class RideOfferRequestModalComponent implements OnInit {
     return this.showList.filter(state => state.name.toLowerCase().indexOf(filterValue) === 0);
   }
 
+  loadingToRide() {
+    const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'RideComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
+    dialogRef.afterClosed().subscribe(res => {});
+  }
+
 
   makeTicketRequest(eventName: string, from: string, numPlaces: number, price: number) {
     const currentUser: User = JSON.parse(this.loggedUserService.getCurrentUser());
@@ -55,8 +62,8 @@ export class RideOfferRequestModalComponent implements OnInit {
       price: price
     }
     this.requestService.doRideOfferRequest(request);
+    this.loadingToRide();
     this.closeModal();
-    this.route.navigate(['/rides']).finally();
   }
 
 }

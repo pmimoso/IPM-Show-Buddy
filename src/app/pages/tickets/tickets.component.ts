@@ -5,6 +5,8 @@ import { RequestsService } from 'src/app/services/requests.service';
 import { LoggedUserService } from 'src/app/services/logged-user.service';
 import { EventsService } from 'src/app/services/events.service';
 import { TicketSellRequestModalComponent } from 'src/app/elements/modal/ticket-sell-request-modal/ticket-sell-request-modal.component';
+import { ProgressSpinerComponent } from 'src/app/elements/progress-spiner/progress-spiner.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-tickets',
@@ -22,7 +24,7 @@ export class TicketsComponent implements OnInit {
 
   constructor(private requestService: RequestsService,
     private modal: NgbModal, private loggedUserService: LoggedUserService,
-    private eventsService: EventsService) {
+    private eventsService: EventsService, public dialog: MatDialog) {
     this.ticketSellRequest = this.requestService.getTicketSellRequestList();
     this.loggedUser = JSON.parse(this.loggedUserService.getCurrentUser());
     this.allEvents = this.eventsService.getAllShows();
@@ -50,6 +52,8 @@ export class TicketsComponent implements OnInit {
   }
 
   deleteTicketSellRequest(requestIndex: number) {
+    const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'DelTicketComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
+    dialogRef.afterClosed().subscribe(res => {});
     this.requestService.deleteTicketSellRequest(requestIndex);
   }
 

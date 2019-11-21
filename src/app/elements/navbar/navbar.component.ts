@@ -5,6 +5,8 @@ import { RegisterModalComponent } from '../modal/register-modal/register-modal.c
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { LoggedUserService } from 'src/app/services/logged-user.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { ProgressSpinerComponent } from '../progress-spiner/progress-spiner.component';
 
 @Component({
   selector: 'app-navbar',
@@ -20,7 +22,7 @@ export class NavbarComponent implements OnInit {
   loggedUser: User;
 
   constructor(private modalService: NgbModal, private loggedUserService: LoggedUserService,
-    private router: Router) {
+    private router: Router, public dialog: MatDialog) {
     loggedUserService.itemValue.subscribe(loggedUser => {
       this.loggedUser = JSON.parse(loggedUser);
      });
@@ -35,7 +37,7 @@ export class NavbarComponent implements OnInit {
   }
 
   openRegisterModal(): void {
-    this.modalService.open(RegisterModalComponent);
+    this.modalService.open(RegisterModalComponent, {size: 'lg'});
   }
 
   toggleCollapsed(): void {
@@ -53,11 +55,21 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/home']).finally();
   }
 
+  openDashboardLoading() {
+    const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'DashComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
+    dialogRef.afterClosed().subscribe(res => {});
+  }
+
+  openHomeLoading() {
+    const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'HomeComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
+    dialogRef.afterClosed().subscribe(res => {});
+  }
+
   navigateThrough(): void {
     if(this.loggedUser) {
-      this.router.navigate(['/dashboard']).finally();
+      this.openDashboardLoading();
     } else {
-      this.router.navigate(['/home']).finally();
+      this.openHomeLoading();
     }
   }
 

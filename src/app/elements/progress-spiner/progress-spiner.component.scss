@@ -1,0 +1,12 @@
+.my-spinner {
+    margin-top: 21%;
+    margin-left: 20%;
+  }
+  
+  ::ng-deep .mat-dialog-container {
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.0);
+  }
+  ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: rgb(73, 81, 163);
+  }

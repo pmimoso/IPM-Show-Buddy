@@ -1,76 +1,96 @@
 .card-wrapper {
-    display: block;
-    margin: auto;
-    margin-left: 10%;
-    width: 55%;
+  display: block;
+  margin: auto;
+  margin-left: 10%;
+  width: 100%;
 
-  }
-
-  .list-wrapper {
-    height: 100%;
-    background-image: linear-gradient(rgb(144, 149, 211), white);
-    background-size: 100%;
-  }
-
-  .request-card {
-    display:flex;
-    border-color: rgb(42, 51, 124);
-   // border: 2px solid rgb(42, 51, 124);
-    background-color: rgb(255, 255, 255);
-    margin-top: 8%;
-  }
-
-  .vertical-divider {
-    height: auto;
-    border-left: 1px solid rgba(42, 51, 124, 0.5);
-    margin-left: 5%;
-  }
-
-  #invite-btn {
-    border-color: rgb(29, 158, 4);
-    background-color: rgb(29, 158, 4);
-    margin-left: 6%;
-  }
-
-  #erase-btn {
-    border-color: rgb(158, 4, 4);
-    background-color: rgb(158, 4, 4);
-    margin-left: 6%;
-  }
-
-  .description-text {
-    margin-top: 2%;
-  }
-
-  .request-btn-wrapper {
-    float: right;
-    margin-top: 5%;
-    margin-right: 14%;
-  }
-
-  .request-btn {
-    font-size: 50px;
-    transform: scale(1.6);
-    transition: 1s;
 }
 
-.request-btn:hover {
-  font-size: 50px;
-  transform: scale(1.6);
-  background-image: radial-gradient(rgb(144, 149, 211), white);
+.list-wrapper {
+  height: 100%;
+  background-image: linear-gradient(rgb(144, 149, 211), white);
   background-size: 100%;
 }
 
+.request-card {
+  box-shadow: 0px 6px 9px rgba(0,0,0, 0.3);
+  display:flex;
+  border-color: rgb(42, 51, 124);
+ // border: 2px solid rgb(42, 51, 124);
+  background-color: rgb(255, 255, 255);
+  margin-top: 8%;
+}
+
+.vertical-divider {
+  height: auto;
+  border-left: 1px solid rgba(42, 51, 124, 0.5);
+  margin-left: 5%;
+}
+
+#invite-btn {
+  border-color: rgb(29, 158, 4);
+  background-color: rgb(29, 158, 4);
+  margin-left: 6%;
+}
+
+#erase-btn {
+  border-color: rgb(158, 4, 4);
+  background-color: rgb(158, 4, 4);
+  margin-left: 6%;
+}
+
+.description-text {
+  margin-top: 2%;
+}
+
+.request-btn-wrapper {
+  float: right;
+  margin-top: 5%;
+  margin-right: 14%;
+}
+
+.request-btn {
+  font-size: 50px;
+  transform: scale(1.6);
+  transition: 1s;
+  margin-top: 3vw;
+}
+
+.request-btn:hover {
+font-size: 50px;
+transform: scale(1.6);
+background-image: radial-gradient(rgb(144, 149, 211), white);
+background-size: 100%;
+margin-top: 3vw;
+}
+
+.request-btn:focus {
+outline: none;
+
+
+}
+
 .dropdown-event {
-  padding-bottom: 3%;
-  padding-left: 1%;
-  transform: translate(70%, 45px);
+  display: table;
+padding-bottom: 3%;
+padding-left: 1%;
+transform: translate(70%, 45px);
+margin-left: 63%;
 }
 
 @media screen and (min-width: 1920px) {
-  .dropdown-event {
-    padding-bottom: 3%;
-    padding-left: 3%;
-    transform: translate(70%, 45px);
-  }
+.dropdown-event {
+  padding-bottom: 3%;
+  padding-left: 3%;
+  transform: translate(70%, 45px);
+}
+}
+
+.text-top {
+color: rgb(42, 51, 124);
+transform: translateY(7vw);
+margin-left: 11vw;
+display: flex;
+font-size: 50px;
+font-family: 'Bree Serif';
 }

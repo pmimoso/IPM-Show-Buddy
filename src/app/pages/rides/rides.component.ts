@@ -5,6 +5,8 @@ import { LoggedUserService } from 'src/app/services/logged-user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventsService } from 'src/app/services/events.service';
 import { RideOfferRequestModalComponent } from 'src/app/elements/modal/ride-offer-request-modal/ride-offer-request-modal.component';
+import { ProgressSpinerComponent } from 'src/app/elements/progress-spiner/progress-spiner.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-rides',
@@ -23,7 +25,7 @@ export class RidesComponent implements OnInit {
 
   constructor(private requestService: RequestsService,
     private modal: NgbModal, private loggedUserService: LoggedUserService,
-    private eventsService: EventsService) {
+    private eventsService: EventsService, public dialog: MatDialog) {
     this.rideRequests = this.requestService.getRideOfferRequestsList();
     this.loggedUser = JSON.parse(this.loggedUserService.getCurrentUser());
     this.allEvents = this.eventsService.getAllShows();
@@ -53,11 +55,15 @@ export class RidesComponent implements OnInit {
     return false;
   }
 
+  
+
   openRequestModal() {
     this.modal.open(RideOfferRequestModalComponent, { centered: true });
   }
 
   deleteRequest(requestIndex: number) {
+    const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'DelRideComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
+    dialogRef.afterClosed().subscribe(res => {});
     this.requestService.deleterRideOfferRequest(requestIndex);
   }
 
