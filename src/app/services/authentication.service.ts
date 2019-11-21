@@ -10,7 +10,7 @@ export class AuthenticationService {
     password: "admin",
     birthday: new Date("1990/10/02"),
     profilePic: "assets/ava.png",
-    tastes: null
+    tastes: ['Rap']
   }
 
   userList: User[] = [this.admin];
