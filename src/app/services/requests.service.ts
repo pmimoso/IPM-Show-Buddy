@@ -5,6 +5,35 @@ import { Injectable } from '@angular/core';
 })
 export class RequestsService {
 
+
+  rideOfferRequests: RideRequest [] = [ {
+    requestOwner: {
+      username: "Sandro_Malandro",
+      password: "Sandro",
+      birthday: new Date("1946/01/12"),
+      profilePic: "assets/0.png",
+      tastes: ['Rock', 'Rap',]
+      },
+      eventName: "Festival da Sardinha",
+      from: "Baixa da Banheira",
+      numberOfPlaces: 3,
+      price: 50,
+    },
+    {
+    requestOwner: {
+      username: "LeonelFragoso",
+      password: "Leonel",
+      birthday: new Date("1988/08/19"),
+      profilePic: "assets/3.png",
+      tastes: ['Museus']
+        },
+        eventName: "Panda e os Caricas",
+        from: "Póvoa de Santa Iria",
+        numberOfPlaces: 1,
+        price: 15,
+  
+  }]
+
   ticketSellRequests: TicketSellRequest[] = [ {
     requestOwner: {
     username: "Sandro_Malandro",
@@ -90,6 +119,10 @@ export class RequestsService {
 
   constructor() { }
 
+  doRideOfferRequest(rideOffer: RideRequest) {
+    this.rideOfferRequests.unshift(rideOffer);
+  }
+
   doCompanyRequest(cRequest: CompanyRequest) {
     this.companyRequests.unshift(cRequest);
   }
@@ -97,6 +130,14 @@ export class RequestsService {
   getCompanyRequestList() {
     return this.companyRequests;
   }
+
+  getRideOfferRequestsList() {
+    return this.rideOfferRequests;
+  }
+
+  deleterRideOfferRequest(requestIndex: number) {
+    this.rideOfferRequests.splice(requestIndex, 1);
+}
 
   deleteCompanyRequest(requestIndex: number) {
     this.companyRequests.splice(requestIndex, 1);

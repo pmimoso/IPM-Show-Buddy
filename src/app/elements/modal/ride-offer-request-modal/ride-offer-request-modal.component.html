@@ -1,0 +1,34 @@
+<div class="modal-body">
+    <img ngbAutofocus class="modal-image" src="../../../../assets/connection.png">
+    <div class="confirmation-message">
+        Aqui podes fazer uma oferta de boleia. Insere o número de lugares disponíveis no carro,
+        o local de partida e o preço a cobrar pela boleia.
+    </div>
+
+    <div class="form-group">
+        <mat-form-field class="company-request-field">
+            <mat-hint>Escolha o nome do evento a que deseja ir.</mat-hint>
+            <input matInput [(ngModel)]='eventName' [matAutocomplete]="auto" [formControl]="showCtrl" placeholder="Nome do evento">
+            <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let show of filteredShows | async" [value]="show.name">
+                                  {{show.name}}
+                                </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field class="company-request-field">
+            <mat-hint>Defina o local de partida.</mat-hint>
+            <input matInput  [(ngModel)]='from' placeholder="Local de partida">
+        </mat-form-field>
+        <mat-form-field class="company-request-field">
+            <mat-hint>Indique o número de lugares disponíveis no carro.</mat-hint>
+            <input matInput type="number"  maxlength="2" [(ngModel)]='numPlaces' placeholder="Lugares disponíveis">
+        </mat-form-field>
+        <mat-form-field class="company-request-field">
+            <mat-hint>Indique o preço a cobrar pela boleia.</mat-hint>
+            <input matInput type="number" maxlength="3" [(ngModel)]='price' placeholder="Lugares disponíveis">
+        </mat-form-field>
+    </div>
+
+    <div class="company-button-wrapper">
+            <button mat-raised-button type="button" class="company-request-btn" (click)="makeTicketRequest(eventName, from, numPlaces, price)">Publicar</button>
+        </div>

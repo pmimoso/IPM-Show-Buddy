@@ -29,6 +29,7 @@ import { EventModalComponent } from './elements/modal/event-modal/event-modal.co
 import { ShowSuggestionComponent } from './pages/show-suggestion/show-suggestion.component';
 import { SuggestionConfirmationComponent } from './elements/modal/suggestion-confirmation/suggestion-confirmation.component';
 import { TicketSellRequestModalComponent } from './elements/modal/ticket-sell-request-modal/ticket-sell-request-modal.component';
+import { RideOfferRequestModalComponent } from './elements/modal/ride-offer-request-modal/ride-offer-request-modal.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { TicketSellRequestModalComponent } from './elements/modal/ticket-sell-re
     ShowSuggestionComponent,
     SuggestionConfirmationComponent,
     TicketSellRequestModalComponent,
+    RideOfferRequestModalComponent,
     
   ],
   imports: [
@@ -83,7 +85,8 @@ import { TicketSellRequestModalComponent } from './elements/modal/ticket-sell-re
     CompanyRequestModalComponent,
     EventModalComponent,
     SuggestionConfirmationComponent,
-    TicketSellRequestModalComponent
+    TicketSellRequestModalComponent,
+    RideOfferRequestModalComponent
   ],
   bootstrap: [AppComponent]
 })
