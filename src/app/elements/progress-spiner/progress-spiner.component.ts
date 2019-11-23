@@ -23,6 +23,10 @@ export class ProgressSpinerComponent implements OnInit {
       setTimeout(() => { this.router.navigate(['/dashboard']).finally(); }, 1200);
     }
 
+    if (this.data.component == 'EventsComp') {
+      setTimeout(() => { this.router.navigate(['/events']).finally(); }, 1200);
+    }
+
     if (this.data.component == 'HomeComp') {
       setTimeout(() => { this.router.navigate(['/home']).finally(); }, 1200);
     }

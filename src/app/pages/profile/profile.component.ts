@@ -4,6 +4,8 @@ import { RequestsService } from 'src/app/services/requests.service';
 import { EventSuggestionService } from 'src/app/services/event-suggestion.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserModalComponent } from 'src/app/elements/modal/user-modal/user-modal.component';
+import { MatDialog } from '@angular/material';
+import { ProgressSpinerComponent } from 'src/app/elements/progress-spiner/progress-spiner.component';
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +17,7 @@ export class ProfileComponent implements OnInit {
   loggedUser: User = null;
 
   constructor(private loggedUserService: LoggedUserService, private requestsService: RequestsService,
-    private suggestionService: EventSuggestionService, private modal: NgbModal) { }
+    private suggestionService: EventSuggestionService, private modal: NgbModal, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.loggedUser = JSON.parse(this.loggedUserService.getCurrentUser());
@@ -50,6 +52,11 @@ export class ProfileComponent implements OnInit {
     const timeDifference = Math.abs(Date.now() - bDay.getTime());
     const age = Math.floor(timeDifference / (1000 * 3600 * 24) / 365.25);
     return age;
+  }
+
+  redirectToEvents() {
+    const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'EventsComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
+    dialogRef.afterClosed().subscribe(res => {});
   }
 
   openUserModal() {
