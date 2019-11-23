@@ -20,8 +20,7 @@ export class SuggestionConfirmationComponent implements OnInit {
 
   redirect() {
     this.closeModal();
-    //TODO: redirect to profile
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/profile']);
 
   }
 

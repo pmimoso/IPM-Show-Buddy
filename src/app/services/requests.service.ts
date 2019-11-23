@@ -8,6 +8,20 @@ export class RequestsService {
 
   rideOfferRequests: RideRequest [] = [ {
     requestOwner: {
+      username: "LeonelFragoso",
+      password: "Leonel",
+      birthday: new Date("1988/08/19"),
+      profilePic: "assets/3.png",
+      tastes: ['Museus']
+        },
+        eventName: "Panda e os Caricas",
+        from: "Coina",
+        numberOfPlaces: 1,
+        price: 15,
+  
+  },
+  {
+    requestOwner: {
       username: "Sandro_Malandro",
       password: "Sandro",
       birthday: new Date("1946/01/12"),
@@ -18,21 +32,7 @@ export class RequestsService {
       from: "Baixa da Banheira",
       numberOfPlaces: 3,
       price: 50,
-    },
-    {
-    requestOwner: {
-      username: "LeonelFragoso",
-      password: "Leonel",
-      birthday: new Date("1988/08/19"),
-      profilePic: "assets/3.png",
-      tastes: ['Museus']
-        },
-        eventName: "Panda e os Caricas",
-        from: "Póvoa de Santa Iria",
-        numberOfPlaces: 1,
-        price: 15,
-  
-  }
+    }
 ]
 
   ticketSellRequests: TicketSellRequest[] = [ {

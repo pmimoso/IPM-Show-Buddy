@@ -24,7 +24,7 @@
         <li class="nav-item">
             <a class="nav-link" routerLink="/tickets">Bilhetes</a>
           </li>
-          <li class="nav-item">
+          <li *ngIf="loggedUser" class="nav-item">
             <div class="dropdown dropright">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" (click)="toggleDropdownCollapsed($event)">Mais opções</a>
             <div class="dropdown-menu" [ngbCollapse]="dropdownCollapsed">
