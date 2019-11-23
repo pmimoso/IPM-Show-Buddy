@@ -27,8 +27,8 @@ export class ShowSuggestionComponent implements OnInit {
   submitSuggestion(eventName: string, eventType: string, eventLocation: string, startDate: Date, endDate: Date) {
     const suggestion: ShowSuggestion = {
       name: eventName,
-      location: eventType,
-      eventType: eventLocation,
+      location: eventLocation,
+      eventType: eventType,
       startDate: startDate,
       endDate: endDate,
     }

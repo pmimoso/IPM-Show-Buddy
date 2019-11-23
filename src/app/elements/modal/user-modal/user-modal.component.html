@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-4 card-principal">
+        <img class="profile-image" src="{{mockUser.profilePic}}">
+        <h3 class="profile-username">{{mockUser.username}}</h3>
+    </div>
+    <div class="col-8 card-details">
+        <p class="profile-detail"><b>Email:</b> {{mockUser.email}}</p>
+        <p class="profile-detail"><b>Idade:</b> {{calculateAge()}} anos</p>
+        <p class="profile-detail"><b>Gostos:</b> {{mockUser.tastes.join(', ')}}</p>
+    </div>
+</div>

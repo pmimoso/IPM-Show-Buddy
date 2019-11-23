@@ -32,7 +32,7 @@ export class ProgressSpinerComponent implements OnInit {
     }
 
     if (this.data.component == 'TicketComp') {
-      setTimeout(() => { this.router.navigate(['/company']).finally(); }, 1200);
+      setTimeout(() => { this.router.navigate(['/tickets']).finally(); }, 1200);
     }
 
     if (this.data.component == 'RideComp') {

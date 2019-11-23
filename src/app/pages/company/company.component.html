@@ -34,7 +34,7 @@
                                 class="btn btn-primary btn-block bottom-btn-style"
                                 (click)="deleteRequest(i)">Eliminar</button>
                             <button *ngIf="!isCurrentUser(i) && loggedUser" type="button" id="invite-btn"
-                                class="btn btn-primary btn-block bottom-btn-style">Convidar</button>
+                                class="btn btn-primary btn-block bottom-btn-style" (click)="openConfirmationModal(request.requestOwner.username)">Convidar</button>
                         </div>
                     </div>
                 </mat-card>

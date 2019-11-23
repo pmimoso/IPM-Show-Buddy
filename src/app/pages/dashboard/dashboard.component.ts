@@ -55,7 +55,6 @@ export class DashboardComponent implements OnInit {
 
   //TODO: if event does not exist, popup another modal
   openEventModal(eventName: string) {
-    console.log(eventName);
     const modalRef = this.modal.open(EventModalComponent, { centered: true });
     modalRef.componentInstance.eventName = eventName;
     modalRef.result.then().catch(err => {}).finally();

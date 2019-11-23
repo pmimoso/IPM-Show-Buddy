@@ -6,7 +6,8 @@ import { LoggedUserService } from 'src/app/services/logged-user.service';
 import { EventsService } from 'src/app/services/events.service';
 import { TicketSellRequestModalComponent } from 'src/app/elements/modal/ticket-sell-request-modal/ticket-sell-request-modal.component';
 import { ProgressSpinerComponent } from 'src/app/elements/progress-spiner/progress-spiner.component';
-import { MatDialog } from '@angular/material';
+import { MatDialog, getMatFormFieldPlaceholderConflictError } from '@angular/material';
+import { RequestConfirmationModalComponent } from 'src/app/elements/modal/request-confirmation-modal/request-confirmation-modal.component';
 
 @Component({
   selector: 'app-tickets',
@@ -74,6 +75,11 @@ export class TicketsComponent implements OnInit {
 
 openTicketSellModal() {
   this.modal.open(TicketSellRequestModalComponent, {centered: true});
+}
+
+openConfirmationModal(username: string) {
+  const modalRef = this.modal.open(RequestConfirmationModalComponent, { centered: true });
+  modalRef.componentInstance.user = username;
 }
 
 }

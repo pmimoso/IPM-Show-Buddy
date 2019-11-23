@@ -32,6 +32,8 @@ import { TicketSellRequestModalComponent } from './elements/modal/ticket-sell-re
 import { RideOfferRequestModalComponent } from './elements/modal/ride-offer-request-modal/ride-offer-request-modal.component';
 import { ProgressSpinerComponent } from './elements/progress-spiner/progress-spiner.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { UserModalComponent } from './elements/modal/user-modal/user-modal.component';
+import { RequestConfirmationModalComponent } from './elements/modal/request-confirmation-modal/request-confirmation-modal.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     RideOfferRequestModalComponent,
     ProgressSpinerComponent,
     ProfileComponent,
+    UserModalComponent,
+    RequestConfirmationModalComponent,
     
   ],
   imports: [
@@ -95,7 +99,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
     SuggestionConfirmationComponent,
     TicketSellRequestModalComponent,
     RideOfferRequestModalComponent,
-    ProgressSpinerComponent
+    ProgressSpinerComponent,
+    UserModalComponent,
+    RequestConfirmationModalComponent
   ],
   bootstrap: [AppComponent]
 })

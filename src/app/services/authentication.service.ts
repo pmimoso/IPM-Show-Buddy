@@ -14,7 +14,47 @@ export class AuthenticationService {
     tastes: ['Rap']
   }
 
-  userList: User[] = [this.admin];
+  mockUser1: User = {
+    username: "PatriciaMeireles",
+    password: "patty",
+    email: "patty_diva@gmail.com",
+    birthday: new Date("1990/12/07"),
+    profilePic: "assets/patricia.png",
+    tastes: ['Ópera', 'Museus', 'Teatros']
+
+  }
+
+  mockUser2: User = {
+    username: "Rosinha",
+    password: "rosinha",
+    email: "rosinha@gmail.com",
+    birthday: new Date("1980/02/17"),
+    profilePic: "assets/rosinha.png",
+    tastes: ['Ópera', 'Teatros']
+
+  }
+
+  mockUser3: User = {
+    username: "Tobi98",
+    password: "tobi98",
+    email: "tobi@gmail.com",
+    birthday: new Date("1990/03/07"),
+    profilePic: "assets/tobi98.png",
+    tastes: ['Rock', 'Teatros']
+
+  }
+
+  mockUser4: User = {
+    username: "MeirelesFofo",
+    password: "meirelesfofo",
+    email: "fofofofinho@gmail.com",
+    birthday: new Date("1994/03/05"),
+    profilePic: "assets/meirelesfofo.png",
+    tastes: ['Rap', 'Museus']
+
+  }
+
+  userList: User[] = [this.admin, this.mockUser1, this.mockUser2, this.mockUser3, this.mockUser4];
 
   constructor() {
   }

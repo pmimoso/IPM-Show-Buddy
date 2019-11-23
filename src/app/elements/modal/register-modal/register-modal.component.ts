@@ -14,7 +14,7 @@ import { RequiredErrorModalComponent } from '../required-error-modal/required-er
 export class RegisterModalComponent implements OnInit {
 
   taste = new FormControl();
-  tasteList: string[] = ['Rock', 'Rap', 'Ópera', 'Metal', 'Museus', 'Festivais de verão', 'Teatros'];
+  tasteList: string[] = ['Rock', 'Rap', 'Música clássica', 'Kizomba', 'Pop', 'Ópera', 'Metal', 'Museus', 'Festivais de verão', 'Teatros'];
 
   constructor(public activeModal: NgbActiveModal, private confirmationModalService: NgbModal,
     private passwordErrorModalService: NgbModal, private requiredErrorModalService: NgbModal,

@@ -7,6 +7,7 @@ import { EventsService } from 'src/app/services/events.service';
 import { RideOfferRequestModalComponent } from 'src/app/elements/modal/ride-offer-request-modal/ride-offer-request-modal.component';
 import { ProgressSpinerComponent } from 'src/app/elements/progress-spiner/progress-spiner.component';
 import { MatDialog } from '@angular/material';
+import { RequestConfirmationModalComponent } from 'src/app/elements/modal/request-confirmation-modal/request-confirmation-modal.component';
 
 @Component({
   selector: 'app-rides',
@@ -55,7 +56,10 @@ export class RidesComponent implements OnInit {
     return false;
   }
 
-  
+  openConfirmationModal(username: string) {
+    const modalRef = this.modal.open(RequestConfirmationModalComponent, { centered: true });
+    modalRef.componentInstance.user = username;
+  }
 
   openRequestModal() {
     this.modal.open(RideOfferRequestModalComponent, { centered: true });

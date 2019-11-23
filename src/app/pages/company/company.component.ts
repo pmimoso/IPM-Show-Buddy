@@ -7,6 +7,7 @@ import { EventsService } from 'src/app/services/events.service';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { ProgressSpinerComponent } from 'src/app/elements/progress-spiner/progress-spiner.component';
+import { RequestConfirmationModalComponent } from 'src/app/elements/modal/request-confirmation-modal/request-confirmation-modal.component';
 
 @Component({
   selector: 'app-company',
@@ -51,6 +52,11 @@ export class CompanyComponent implements OnInit {
       }
     }
     return false;
+  }
+
+  openConfirmationModal(username: string) {
+    const modalRef= this.modal.open(RequestConfirmationModalComponent, { centered: true });
+    modalRef.componentInstance.user  = username;
   }
 
   openRequestModal() {
