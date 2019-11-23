@@ -20,6 +20,9 @@
                     class="row request-card">
                     <div class="col-3">
                         <img src={{request.requestOwner.profilePic}}>
+                        <button *ngIf="isCurrentUser(i)" type="button" id="go-btn"
+                                class="btn btn-primary btn-block bottom-btn-style"
+                                (click)="goToProfile()">Ver perfil</button>
                     </div>
                     <div class="col-4 description-text">
                         <p>{{request.requestOwner.username}}, {{calculateAge(i)}}</p>
@@ -33,6 +36,7 @@
                             <button *ngIf="isCurrentUser(i)" type="button" id="erase-btn"
                                 class="btn btn-primary btn-block bottom-btn-style"
                                 (click)="deleteRequest(i)">Eliminar</button>
+                                
                             <button *ngIf="!isCurrentUser(i) && loggedUser" type="button" id="invite-btn"
                                 class="btn btn-primary btn-block bottom-btn-style" (click)="openConfirmationModal(request.requestOwner.username)">Convidar</button>
                         </div>

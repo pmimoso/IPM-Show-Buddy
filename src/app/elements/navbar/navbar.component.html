@@ -50,7 +50,7 @@
       </div>
       
       <div *ngIf="loggedUser" class="navbar-btn-group logged-group">
-          <img id="user-ava" src="{{loggedUser.profilePic}}" (click)="goToProfile()">
+          <img id="user-ava" src="{{loggedUser.profilePic}}" (click)="goToProfile()" matTooltip="Clica para ires para o teu perfil">
         <button type="button" class="logout-btn" id="navbar-btn" (click)="logout()">Logout</button>
       </div>
 

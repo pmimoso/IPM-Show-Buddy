@@ -43,6 +43,11 @@ export class RidesComponent implements OnInit {
     return age;
   }
 
+  goToProfile() {
+    const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'ProfileComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
+    dialogRef.afterClosed().subscribe(res => {});
+  }
+
 
   isCurrentUser(requestIndex: number) {
     const loggedUser = JSON.parse(localStorage.getItem('loggedUser'));

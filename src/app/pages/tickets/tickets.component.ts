@@ -63,6 +63,11 @@ export class TicketsComponent implements OnInit {
     return show.eventImage;
   }
 
+  goToProfile() {
+    const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'ProfileComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
+    dialogRef.afterClosed().subscribe(res => {});
+  }
+
   filter(cRequest: CompanyRequest[], showName: string): CompanyRequest[] {
 
     if(showName) {

@@ -23,6 +23,9 @@
                     class="row request-card">
                     <div class="col-3">
                         <img src={{request.requestOwner.profilePic}}>
+                        <button *ngIf="isCurrentUser(i)" type="button" id="go-btn"
+                                class="btn btn-primary btn-block bottom-btn-style"
+                                (click)="goToProfile()">Ver perfil</button>
                     </div>
                     <div class="col-4 description-text">
                         <p>{{request.requestOwner.username}}, {{calculateAge(i)}}</p>

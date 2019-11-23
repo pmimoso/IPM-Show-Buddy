@@ -63,6 +63,11 @@ export class CompanyComponent implements OnInit {
     this.modal.open(CompanyRequestModalComponent, { centered: true });
   }
 
+  goToProfile() {
+    const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'ProfileComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
+    dialogRef.afterClosed().subscribe(res => {});
+  }
+
   deleteRequest(requestIndex: number) {
     const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'DelCompanyComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
     dialogRef.afterClosed().subscribe(res => {});
