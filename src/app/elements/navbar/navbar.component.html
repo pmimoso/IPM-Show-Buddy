@@ -26,7 +26,7 @@
           </li>
           <li class="nav-item">
             <div class="dropdown dropright">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" (click)="toggleDropdownCollapsed()">Mais opções</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" (click)="toggleDropdownCollapsed($event)">Mais opções</a>
             <div class="dropdown-menu" [ngbCollapse]="dropdownCollapsed">
                 <li class="nav-item">
                 <a href="#" class="dropdown-item drop-stuff" routerLink="/suggestion">Sugerir um novo evento</a>
@@ -48,9 +48,10 @@
         <button type="button" class="btn btn-primary" id="navbar-btn" (click)="openRegisterModal()">Registar</button>
         <button type="button" class="btn btn-primary" id="navbar-btn" (click)="openLoginModal()">Login</button>
       </div>
-
-      <div *ngIf="loggedUser" class="navbar-btn-group">
-        <button type="button" class="btn btn-primary" id="navbar-btn" (click)="logout()">Logout</button>
+      
+      <div *ngIf="loggedUser" class="navbar-btn-group logged-group">
+          <img id="user-ava" src="{{loggedUser.profilePic}}" (click)="goToProfile()">
+        <button type="button" class="logout-btn" id="navbar-btn" (click)="logout()">Logout</button>
       </div>
 
     </div>

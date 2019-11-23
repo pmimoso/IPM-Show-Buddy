@@ -27,3 +27,35 @@
     padding: inherit;
     text-align: center;
 }
+
+.logged-group {
+    margin-right: 2%;
+    text-align: right;
+}
+
+#user-ava {
+    margin-right: 5%;
+    height: auto;
+    width: 18%;
+}
+
+#user-ava:hover {
+    height: auto;
+    width: 18%;
+    cursor: pointer;
+}
+
+.logout-btn {
+    font-size: 14px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(144, 149, 211) !important;
+    transition: 2s;
+}
+
+.logout-btn:hover {
+    font-size: 14px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgb(144, 149, 211) !important;
+}

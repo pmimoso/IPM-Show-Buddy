@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="row user-tab">
+        <div class="col-4">
+            <img class="profile-image" src="{{loggedUser.profilePic}}">
+            <h3 class="profile-username">{{loggedUser.username}}</h3>
+            <p class="profile-detail"><b>Email:</b> {{loggedUser.email}}</p>
+            <p class="profile-detail"><b>Idade:</b> {{calculateAge()}} anos</p>
+            <p class="profile-detail"><b>Gostos:</b> {{loggedUser.tastes.join(', ')}}</p>
+        </div>
+        <div class="col-6">
+                <mat-tab-group>
+                        <mat-tab label="Companhias">
+                            <h5 class="request-label"><b>Pedidos realizados:</b></h5>
+                            <div class="request-label" *ngFor="let request of getUserCompanyRequests()">
+                                ⇾ Pessoa entre os {{request.minAge}} e os {{request.maxAge}} anos do sexo {{request.sex.join(', ')}}
+                                para o evento <b>{{request.eventName}}</b>.
+                                <br><br>
+                                <mat-divider></mat-divider>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Boleias">
+                                <h5 class="request-label"><b>Ofertas realizadas:</b></h5>
+                                <div class="request-label" *ngFor="let request of getUserRideRequests()">
+                                    ⇾ Oferece {{request.numberOfPlaces }} lugar(es) no carro ao preço de {{request.price}} euros
+                                   e com partida de {{request.from}} para o evento <b>{{request.eventName}}</b>.
+                                    <br><br>
+                                    <mat-divider></mat-divider>
+                                </div>
+                        </mat-tab>
+                        <mat-tab label="Bilhetes">
+                                <h5 class="request-label"><b>Anúncios realizados:</b></h5>
+                                <div class="request-label" *ngFor="let request of getUserTicketRequests()">
+                                    ⇾ Vende bilhete ao preço de {{request.price }} euros na zona de {{request.sellLocation}} para o evento <b>{{request.eventName}}</b>.
+                                    <br><br>
+                                    <mat-divider></mat-divider>
+                                </div>
+                        </mat-tab>
+                        <mat-tab label="Sugestões">
+                                <h5 class="request-label"><b>Sugestões realizadas:</b></h5>
+                                <div class="request-label" *ngFor="let request of getUserSuggestions()">
+                                    ⇾ Sugeriu a adição do evento <b>{{request.name}}</b> ao sistema, um {{request.eventType}} situado em {{request.location}},
+                                    no dia {{convertData(request.startDate)}}.
+                                    <br><br>
+                                    <mat-divider></mat-divider>
+                                </div>
+                            </mat-tab>
+                            
+                        
+                      </mat-tab-group>
+        </div>
+    </div>
+</div>

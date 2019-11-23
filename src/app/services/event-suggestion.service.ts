@@ -1,23 +1,30 @@
 import { Injectable } from '@angular/core';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventSuggestionService {
+ 
+  suggestionMap: Map<String, ShowSuggestion[]> = new Map();
+  
 
-  suggestionMap: Map<User, ShowSuggestion[]> = new Map();
+  constructor(private authService: AuthenticationService) {
+   }
 
-  constructor() { }
-
-  addEventSuggestion(user: User, suggestion: ShowSuggestion) {
-    const userExists: boolean = this.suggestionMap.has(user);
+  addEventSuggestion(username: String, suggestion: ShowSuggestion) {
+    const userExists: boolean = this.suggestionMap.has(username);
     if (!userExists) {
-      this.suggestionMap.set(user, new Array() as ShowSuggestion[]);
+      this.suggestionMap.set(username, new Array() as ShowSuggestion[]);
     }
-    const userList: ShowSuggestion[] = this.suggestionMap.get(user);
+    const userList: ShowSuggestion[] = this.suggestionMap.get(username);
     userList.push(suggestion);
-    this.suggestionMap.set(user, userList);
+    this.suggestionMap.set(username, userList);
     console.log(this.suggestionMap);
   }
+
+  getSuggestionsByUsername(username: string) {
+    return this.suggestionMap.get(username);
+  } 
 
 }

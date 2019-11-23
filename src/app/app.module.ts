@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { MatCardModule, MatFormFieldModule, MatProgressSpinnerModule, MatTooltipModule, MatAutocompleteModule, MatInputModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule, MatListModule} from '@angular/material';
+import { MatCardModule, MatFormFieldModule, MatDividerModule, MatTabsModule, MatProgressSpinnerModule, MatTooltipModule, MatAutocompleteModule, MatInputModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule, MatListModule} from '@angular/material';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -31,6 +31,7 @@ import { SuggestionConfirmationComponent } from './elements/modal/suggestion-con
 import { TicketSellRequestModalComponent } from './elements/modal/ticket-sell-request-modal/ticket-sell-request-modal.component';
 import { RideOfferRequestModalComponent } from './elements/modal/ride-offer-request-modal/ride-offer-request-modal.component';
 import { ProgressSpinerComponent } from './elements/progress-spiner/progress-spiner.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ProgressSpinerComponent } from './elements/progress-spiner/progress-spi
     TicketSellRequestModalComponent,
     RideOfferRequestModalComponent,
     ProgressSpinerComponent,
+    ProfileComponent,
     
   ],
   imports: [
@@ -75,6 +77,8 @@ import { ProgressSpinerComponent } from './elements/progress-spiner/progress-spi
     MatTooltipModule,
     MatAutocompleteModule,
     MatDialogModule,
+    MatTabsModule,
+    MatDividerModule,
     MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule,

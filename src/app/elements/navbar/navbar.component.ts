@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginModalComponent } from '../modal/login-modal/login-modal.component';
 import { RegisterModalComponent } from '../modal/register-modal/register-modal.component';
@@ -7,6 +7,7 @@ import { LoggedUserService } from 'src/app/services/logged-user.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { ProgressSpinerComponent } from '../progress-spiner/progress-spiner.component';
+import { bufferWhen } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
@@ -37,17 +38,18 @@ export class NavbarComponent implements OnInit {
   }
 
   openRegisterModal(): void {
-    this.modalService.open(RegisterModalComponent, {size: 'lg'});
+    this.modalService.open(RegisterModalComponent);
   }
 
   toggleCollapsed(): void {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  toggleDropdownCollapsed(): void {
-    event.preventDefault();
-    this.dropdownCollapsed = !this.dropdownCollapsed;
+  toggleDropdownCollapsed(e): void {
+    this.dropdownCollapsed = !this.dropdownCollapsed;  
   }
+
+  
 
   logout() {
     this.loggedUser = null;
@@ -73,5 +75,9 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  goToProfile() {
+    const dialogRef = this.dialog.open(ProgressSpinerComponent, { data: { component: 'ProfileComp'}, width: '300px', height: '300px', panelClass: 'transparent' });
+    dialogRef.afterClosed().subscribe(res => {});
+  }
 
 }

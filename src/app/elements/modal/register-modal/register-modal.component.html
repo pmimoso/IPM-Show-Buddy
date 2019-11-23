@@ -4,19 +4,18 @@
 
     <div class="form-group">
         <mat-form-field class="login-field">
-            <mat-hint>Escolha um nome de utilizador</mat-hint>
             <input matInput [(ngModel)]='username' placeholder="Username">
         </mat-form-field>
         <mat-form-field class="login-field" value="">
-            <mat-hint>Escolha a sua palavra-passe</mat-hint>
             <input  matInput type="password" [(ngModel)]='password' placeholder="Password">
         </mat-form-field>
         <mat-form-field class="login-field" value="">
-                <mat-hint>Confirme a palavra-passe escolhida</mat-hint>
                 <input #confirm matInput type="password" [(ngModel)]='passwordConfirmation' placeholder="Password Confirmation">
             </mat-form-field>
+            <mat-form-field class="login-field">
+                    <input matInput type="email" [(ngModel)]='email' placeholder="Email">
+                </mat-form-field>
         <mat-form-field class="login-field" value="">
-            <mat-hint>Insira a sua data de nascimento</mat-hint>
             <input matInput [matDatepicker]="picker" [(ngModel)]='birthday' placeholder="Birthday">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
@@ -30,6 +29,6 @@
     </div>
     <div class="login-button-wrapper">
         <button mat-raised-button type="button" class="close-button" (click)="closeModal()">Fechar</button>
-        <button mat-raised-button type="button" class="login-button" (click)="register(username, password, passwordConfirmation, birthday, tastes)">Registar</button>
+        <button mat-raised-button type="button" class="login-button" (click)="register(username, password, passwordConfirmation, email, birthday, tastes)">Registar</button>
     </div>
 </div>

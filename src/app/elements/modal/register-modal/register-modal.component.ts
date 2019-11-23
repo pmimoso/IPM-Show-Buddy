@@ -5,7 +5,6 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-modal.component';
 import { PasswordErrorModalComponent } from '../password-error-modal/password-error-modal.component';
 import { RequiredErrorModalComponent } from '../required-error-modal/required-error-modal.component';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-modal',
@@ -43,10 +42,10 @@ export class RegisterModalComponent implements OnInit {
   }
   
 
-  register(username: string, password: string, confirmationPassword: string, birthday: Date, tastes: string[]) {
+  register(username: string, password: string, confirmationPassword: string, email: string, birthday: Date, tastes: string[]) {
   
 
-    if(username == undefined || password == undefined || confirmationPassword == undefined || birthday == undefined || tastes == undefined) {
+    if(username == undefined || password == undefined || confirmationPassword == undefined || email == undefined || birthday == undefined || tastes == undefined) {
       let args = Array.from(arguments);
       const undefinedParameters = args.filter(arg => arg == undefined).length;
       return this.openRequiredErrorModal(undefinedParameters);
@@ -59,13 +58,13 @@ export class RegisterModalComponent implements OnInit {
     let year = birthday.getFullYear();
     let stringDate = year + "/" + month + "/" + day;
     const finalDate: Date = new Date(stringDate);
-    console.log(finalDate);
 
     if (passwordConfirmed) {
 
       const newUser: User = {
         username: username,
         password: password,
+        email: email,
         birthday: finalDate,
         tastes: tastes
       }

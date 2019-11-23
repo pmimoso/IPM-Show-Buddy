@@ -7,6 +7,7 @@ import { CompanyComponent } from './pages/company/company.component';
 import { RidesComponent } from './pages/rides/rides.component';
 import { TicketsComponent } from './pages/tickets/tickets.component';
 import { ShowSuggestionComponent } from './pages/show-suggestion/show-suggestion.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'suggestion',
     component: ShowSuggestionComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   }
 ];
 

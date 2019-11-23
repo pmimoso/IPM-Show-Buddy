@@ -8,6 +8,7 @@ export class AuthenticationService {
   admin: User = {
     username: "admin",
     password: "admin",
+    email: "admin@admin.pt",
     birthday: new Date("1990/10/02"),
     profilePic: "assets/ava.png",
     tastes: ['Rap']

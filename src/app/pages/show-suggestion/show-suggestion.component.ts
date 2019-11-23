@@ -33,7 +33,7 @@ export class ShowSuggestionComponent implements OnInit {
       endDate: endDate,
     }
 
-    this.eventSuggestionService.addEventSuggestion(this.loggedUser, suggestion);
+    this.eventSuggestionService.addEventSuggestion(this.loggedUser.username, suggestion);
     
     this.modal.open(SuggestionConfirmationComponent, {centered: true}); 
 

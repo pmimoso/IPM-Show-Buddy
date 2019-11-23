@@ -32,7 +32,8 @@ export class RequestsService {
         numberOfPlaces: 1,
         price: 15,
   
-  }]
+  }
+]
 
   ticketSellRequests: TicketSellRequest[] = [ {
     requestOwner: {
@@ -60,6 +61,7 @@ export class RequestsService {
     sellLocation: 'Fanqueiro',
     negotiable: "Não" 
   }
+
 ];
 
   //TODO: popular isto c cenas random
@@ -153,6 +155,18 @@ export class RequestsService {
 
   deleteTicketSellRequest(ticketRequestIndex: number) {
     this.ticketSellRequests.splice(ticketRequestIndex, 1);
+  }
+
+  getCompanyRequestByUsername(username: string) {
+    return this.companyRequests.filter(req => req.requestOwner.username == username);
+  }
+
+  getRideRequestByUsername(username: string) {
+    return this.rideOfferRequests.filter(req => req.requestOwner.username == username);
+  }
+
+  getTicketRequestByUsername(username: string) {
+    return this.ticketSellRequests.filter(req => req.requestOwner.username == username);
   }
 
 }

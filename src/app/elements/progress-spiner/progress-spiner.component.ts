@@ -51,6 +51,11 @@ export class ProgressSpinerComponent implements OnInit {
       setTimeout(() => { this.router.navigate(['/ride']).finally(); }, 1200);
     }
 
+    if (this.data.component == 'ProfileComp') {
+      setTimeout(() => { this.router.navigate(['/profile']).finally(); }, 1200);
+    }
+
+
 
 
   }
